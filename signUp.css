@@ -1,0 +1,143 @@
+.navBar {
+    background-color: rgb(8, 7, 7);
+    width: 100%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    padding-top: 10px;
+    position: sticky;
+    top: 0;
+}
+
+.navBar>div {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.navBar>div>div:nth-child(1) {
+    width: 5%;
+    padding-left: 10px;
+}
+
+.navBar>div>div:nth-child(2) {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navBar>div>div:nth-child(3) {
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(201, 201, 201);
+}
+
+a:hover {
+    cursor: pointer;
+    color: rgb(250, 250, 248);
+}
+
+.contanier {
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    display: flex;
+    height: auto;
+
+}
+
+.contanier>div {
+    width: 100%;
+}
+
+.contanier>div:nth-child(2) {
+    margin: 100px;
+    padding-left: 50px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    height: auto;
+    background-color: rgb(243, 243, 243);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-bottom: 3px solid black;
+    border-top: 3px solid black;
+    border-radius: 20px;
+}
+
+.contanier>div:nth-child(1) {
+    padding: 30px;
+    margin-top: 150px;
+    border-right: 1px solid gray;
+}
+
+.contanier>div:nth-child(1) img {
+    padding-top: 100px;
+    width: 100%;
+}
+
+.contanier>div:nth-child(2) input {
+    margin: 20px;
+    width: 70%;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+button {
+    border-radius: 10px;
+    width: 25%;
+    height: 40px;
+    text-align: center;
+    margin: 20px;
+    border: 0px;
+    color: white;
+    background-color: rgb(14, 14, 14);
+
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#logIn {
+    display: none;
+    padding: 50px;
+}
+.footer{
+    width: 100%;
+    margin-top: 20px;
+     border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    background-color: rgb(243, 243, 243);
+}
+.footer>div{
+    width: 93%;
+    margin: auto;
+    display: block;
+    padding-bottom: 10px;
+
+}
+.footer>div>div:nth-child(1){
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid rgb(52, 51, 51);
+}
+.footer>div>div:nth-child(2){
+    width: 100%;
+    margin-top: 10px;
+    display: grid;
+    text-align: center;
+    gap: 10px;
+    grid-template-columns: repeat(5,1fr);
+    border-bottom: 1px solid rgb(52, 51, 51) ;
+    
+}
