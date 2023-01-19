@@ -1,0 +1,21 @@
+POST https://63c793e3e52516043f4040ed.mockapi.io/login
+Content-Type: application/json
+
+{
+    "username":"admin",
+    "password":"admin"
+}
+
+###
+
+###
+GET  https://63c793e3e52516043f4040ed.mockapi.io/users
+
+###
+DELETE https://63c793e3e52516043f4040ed.mockapi.io/users/5
+        
+         
+    
+###
+
+    # [{"id":"1","firstname":"Tusar","lastname":"Mondal","emailid":"tusharmondal@gmail.com","password":"p@ssw0rd","cart":[{"id":1,"top":"NEW","title":"iPhone 14 Pro & iPhone 14 Pro Max","price":129900,"emi":15413,"image":"https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-card-40-iphone14pro-202209?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1663611329492","itemCount":1},{"id":2,"top":"NEW","title":"iPhone 14 & iPhone 14 Plus","price":79900,"emi":9480,"image":"https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-card-40-iphone14-202209?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1661958160674","itemCount":1},{"id":3,"top":"","title":"iPhone 13 mini & iPhone 13","price":64900,"emi":7700,"image":"https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-card-40-iphone13-202209?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1661958176452","itemCount":1}]},{"id":"2","firstname":"Akash","lastname":"Mishra","emailid":"akashmishra@gmail.com","password":"@k@shm1shr@","cart":[]}]
