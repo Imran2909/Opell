@@ -2,51 +2,7 @@
     font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 /* Navbar */
-.navBar {
-    background-color: rgb(8, 7, 7);
-    width: 100%;
-    height: auto;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 10px;
-    padding-top: 10px;
-    position: sticky;
-    top: 0;
-}
 
-.navBar>div{
-    width: 95%;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-
-.navBar>div>div:nth-child(1) {
-    width:5%;
-    padding-left:10px;
-}
-.navBar>div>div:nth-child(2) {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.navBar>div>div:nth-child(3) {
-    width: 25%;
-    display: flex;
-    justify-content: space-evenly;
-}
-.navBar>div>div>a {
-    text-decoration: none;
-    font-size: 20px;
-    color: rgb(201, 201, 201);
-}
-.navBar>div>div>a:hover {
-    cursor: pointer;
-    color: rgb(250, 250, 248);
-}
 /* Store */
 .store-heading{
     margin-left: 20%;
@@ -87,13 +43,47 @@
 #latest-heading{
     margin-bottom: 20px;
 }
-#latest-cards{
+/* #latest-cards{
     display: flex;
     margin-top: 0px;
     margin-left: 20%;
     margin-bottom: 50px;
+} */
+#latest-cards{
+    margin-left: 20%;
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: smooth;
+    gap: 1.2rem;
+    overflow-x: auto;
+    /* overflow-y: auto; */
+    /* overscroll-behavior-x: auto; */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+#latest-cards::-webkit-scrollbar{
+    /* display: none; */
+    width: 10px;
+    height: 10px;
+}
+#latest-cards::-webkit-scrollbar-thumb{
+    background: black;
+    border-radius: 10px;
+}
+#latest-cards::-webkit-scrollbar-track{
+    background: transparent;
 }
 .latest-card-top{
+    scroll-snap-align: start none;
+    border-radius: 15px;
+    min-width: 335px;
+    height: 500px;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 15px 25px;
+}
+/* .latest-card-top{
     min-width: 335px;
     margin: 0px 10px;
     height: 500px;
@@ -101,7 +91,7 @@
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 15px 25px;
-}
+} */
 .latest-card-top p{
     font-size: 14px;
 }
@@ -117,6 +107,7 @@
     display: flex;
     width: 65%;
     margin-left: 20%;
+    margin-bottom: 60px;
     justify-content: space-around;
     align-items: center;
 }
@@ -158,4 +149,118 @@
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background: url("https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-25-genius-202108?wid=480&hei=240&fmt=p-jpg&qlt=95&.v=1626384443000");
+}
+
+/* APPLE STORE DIFF */
+#store-diff-heading{
+    margin-bottom: 20px;
+}
+#store-diff-cards{
+    margin-left: 15%;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    row-gap: 5px;
+    column-gap: 5px;
+}
+#store-diff-cards>div{
+    width: 250px;
+    height: 150px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    text-align: left;
+}
+#store-diff-cards>div>p{
+    display: inline;
+    font-weight: 500;
+}
+
+/* ACCESSORIES SECTION */
+#accessories-heading{
+    margin-bottom: 20px;
+}
+.accessories-cards{
+    min-width: 320px;
+    height: 300px;
+    padding: 20px;
+    margin: 5px 10px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.carousel {
+    background: white;
+  }
+.carousel-cell {
+    width: 28%;
+    height: 370px;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+ /* cell number */
+.carousel-cell:before {
+    display: block;
+    font-size: 80px;
+    color: white;
+  }
+/* Loud n Clear Section */
+#loud-heading{
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+.lound-n-clear-cards{
+    width: 320px;
+    height: 300px;
+    background-color: white;
+    margin: 5px 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+/* EXPERIENCE SECTION */
+#experience-cardlist{
+    margin-left: 20%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 10px;
+    margin-bottom: 60px;
+}
+#experience-heading{
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+.experience-cards{
+    width: 450px;
+    height: 500px;
+    text-align: left;
+    padding: 0px 10px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.experience-cards>h2{
+    margin-left: 5%;
+    padding-top: 10%;
+}
+.experience-cards>p{
+    margin-left: 5%;
+}
+/* Special store  */
+#special-stores-heading{
+    margin-bottom: 20px;
+}
+#special-store-card{
+    width: 300px;
+    height: 400px;
+    padding: 10px;
+    margin-left: 20%;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#special-store-card>img{
+    display: block;
+    margin: auto;
+    width: 70%;
 }

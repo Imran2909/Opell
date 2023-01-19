@@ -7,101 +7,228 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple Store Online - Apple (IN)</title>
     <link rel="stylesheet" href="./styles/store.css">
-    <!-- <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 </head>
 
 <body>
-    <div class="navBar">
-        <div>
-            <div>
-                <a href=""><img width="150%" style="border-radius: 5px;" src="./logo.png/Opell1024_1.png" alt=""></a>
-            </div>
-            <div>
-                <a href="">Store</a>
-                <a href="">Mac</a>
-                <a href="">iPad</a>
-                <a href="">iPhone</a>
-                <a href="">Watch</a>
-                <a href="">AirPods</a>
-                <a href="">TV & Home</a>
-            </div>
-            <div>
-                <a href=""><img width="30%"
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAe1BMVEUAAAD8/vz////5+/lyc3IsLCyytLI6OjqEhYQpKimpqqn19/Xv8e/o6ujk5uS9vr0NDQ3Q0tAzNDOWl5Zub25DQ0NYWFhgYWDb3dsgICCKi4rIychNTU16e3q/wb8ZGRnV19U+Pz6eoJ4RERFnZ2dbXFsdHR2OkI5RUVHdsakJAAAI60lEQVR4nO1d2WLiOgxNFKAUQiDAsDRtaSml/P8XTkKAskpKLDlLc97uzJ3IB9mWLEuy48jhOcay20sx2cb/1Rb8erGYz17CKIJbRFG4+X4teniG6E4GQUrHvUX6F0Hw1i16mDkxXwfuA27XPF1vPS56uBnxtRu6NLlLnsPpsuhhszF9H2RhdyLZD2dFD52D1dDPpL1Lkv76X9EECEw7uekdOEL4WTQJBNOFEb0jyeilaCIPsAkE+KUc/TJyFOOXcuw/FU3oCnNJfinHsEx7zrgjzC/lOBkVTeyINwV+e479VtHU9niOdPglFOGjaHYxXvpqBPccN0UTDJVm6C/HYaH8vgNlfglFv8CzcktbgSlFrzD737HBb89xXQzB0BbBmOJiVQDBhT2CyWK0bv1nVpZggRS/7fKzT3FnWYN7igOLFHf2+blWtWh/ih4pWiKYc5O5injno/hlhWGeQGESYeqcY5iLph0tZrODMQ3Pm6yf73zoe9LpuxlZgq9v+rN4Msm1xKKFhbJfW6GfiSRE2gQz+KIA/pBxtbTcvGeZr9o+aos9lHjh8Y8E0wzXALoU2XYi5pftZrA1dLnfVg00Mg+8AFH2m88nbsAOXAVmBzB3maz6OyKeq7zvqwU2XlgDMDmSd3lqhJ0gqzM886Jq7yYytj0eRZ2lyImLmkf/5h5HTCjC6ApvHMmBuZxPzmoHhWj4mCO3JyJqSIuCgYikC9DODIBU2kiXto3QEZJ1wpyW6cvlxcwYE2YrJi0FaetlT+Cv9A+6EBQXY0MSFI6i0JEg4TsbSoXyMRTSBZZVIqVCjSARuRZhLiiNVKFG8t0/SqigEqdFEKQnqqASidCMkKG/BWH65ZRIqFDCVXuAd0KylBIJdwaExNzB2MMlf8iIWRHLQTOXoIvL9mRSUvHVAEbnQRL4QUNoB/BRIZ6IjIdYodJltgB8nwHtLAI8dCJyTkT3M53D9gU+UPkCQakvNAAG+vUShPdmLgC9DdW/RXAoJZq7U+hOakGF+r8xNkMsrMIEmBLNr9vQ6IUVFRIrEUxrNNbY72dHhbjnb2z0sZOhui08YoINwnQhYvPDVmqE42AOOJj5ppjnazG3FbtQALP0U3R+2KuORH9os9gw4tAoHnxvobfVIBuNdEgWBeZ3GJ3AMWuocf3zEFiGhBFDzNYKna95wG6+jH5q7HCmfPS9AuK5wcTgu0gMwei7siP5MfguYocs58//ICMxcR4xhveS8fSA7HnQz//ZZ60dLDs+HztuJt5jiRgillmJobWT0xGY75E/gQhjKJ4pQADzH/MbxGWJGCJ+mwFDxKW3zhAbS36GSJJZw1AcDcN8aBjaRMMwH+rPEIm01YThtkQMsfmUn2H9/VKMoe1mDtjZIn++S/3Ph+3yMETimkY3RFic5lts9BxgcRothnajiUi1h9EFChaltLuZasVLsexngxhedowwY2Eym9AsXZvNVdE9z2QgWNmD1bsn9KbW6MuYnbUZT8SSeNUYur7F6zW9W26sJM9iozFsxzNkiKYI6GYHnwOdpIZJUY+/bNFxQ2sfTS/B0FydqQwBEuhMMs2JQvPaFAo57wJL4jU+xuETxI5JRIsRjXMT0W40lo7BaDKN+TzCqy1s9MLFp5F5xQVajGDlgIH2ARAwyss+pkML2ynRB0BAAlqXY2E7xYtmJHJe8ApZpeLKX+AqFMkAHaHT1AXpuvhLIBftCWSO4djZTLGANAVaTiKVaU5UHIuWVF+D6EsFQg9/EM1GPMXHDAiCUqebT0KO2mH/i6qSF2tMT/TeUXPe8B1AshyCahClZDIIgi68ycnCC2VjaDwQQ/Y5kKxoIZWoUHuxpX5WSRU6DtnmS7zB2JISKewwPlEMpe+iSILix2+yAReYH7bPsKUJSkf6qFYqiUy5Z1Om5NYmKe0Aaut2BSfqhG4uqGCDR4yegjJivxg/psjJ9xqc5qzwLuAKc1qI6lQG4geZg2TP1L1hvZmh5QpzJk8s3KR8fMn5GV3oK3VnJ5u2peL9/O80Md9V0gudMFo2JvJhkc/BeaNtxEGCXlNv5hAAPrJzHEfsftDgqUWi23jfpguO2VycLp+fLkVeK+GU44KdBTLuZn3WE1y1J5Kw27Ybjl7E2RI2ed69BE+NYqaHA5InYluIEzBqT/I+6wlqt0J4a6q7JD/Cn/ltPG42fwsHBq+Wgqf1hvAoI8U9SfCCYDDsHtEbBEHudzx+KWpN1OwUjzSNHym5pqimRWZ3eHXoGY18WlRAmdaiEhSNRmkoqhmNr9JQ1HPgSkNRzYFb6b0hmw2KazGDj6oKxYm6Vn0plw89o+E8sR/40YXiRGUGNgzGzvPvFLWo/Ngj9LsrzrMsmmvReVJ81hnCUSyAR1Hv1O84LSVPHA5FK7zVrrkWHaejsOPA7y1Im6lFzVzQ7UJ4qgK8n12ftZlaVE133UhyBBhc3vCWYC3GmEtxBPBvkhDGzB1Vz2jIcQT3lp/DXou6EzXh+OEZhpcu1t85SqJFx1n2gtwcAfovjwfIXIuqRuOA5D3KzCyTf7HGb3ZLo8UE3cjP9HxqvHn26Kz7UhiNE1azXsRym5P/KRrybqrKYTTOsGx3eo8iwKc/73Rm/OqzMjhwt2hNfsK+71+FvH3fD34mmVMqyuDAPcKudY7cpS5cu2hlu9FBiYyGFkplNHRQFgdOEX9Ai+U0GqIos9EQQrkcOBWUzoGTR7MWT1qs8ET9C0ajceBqoMXGgauDFhujcaRYZaPROHAnLVZ4ov6B7aYxGnXQYuPA1UGLjdE4Uqyy0WgcuJMWKzxRm7VYh4n6F4xG48DVQIvMtWi147owmFq0/UKHJHhGw1XswqYO1kS19jS8CjgOnPVHKmXBMRqWH4uVBmO7Ee/eZRn0WlRu26kPUouVZ0iuxeozpLRY9XWYADcaFd9LU2AT1dqzALpAHLhKO6ZnQIxGhY+IF3hEsS4qdB6txUqfD69xz2hU+ox/i9uJWuk4zT2Mr8rqoV8rDe6RFCod6YFbn03mDJ8v4aHSYzCs2Qz9xfOu1+vtzl21//y2e+YZRtZwAAAAAElFTkSuQmCC"
-                        alt=""></a>
-                <a href=""><img width="30%"
-                        src="data:image/png;base64,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"
-                        alt=""></a>
-                <a href="">SignUp</a>
-            </div>
-        </div>
-    </div>
-    <h1 id="store-heading" class="store-heading">Store.<p>The best way to buy the<br>products you love.</p></h1>
+    <!-- NAV SECTION -->
+
+    <!-- TOP PRODUCT OPTION SECTION -->
+    <h1 id="store-heading" class="store-heading">Store.<p>The best way to buy the<br>products you love.</p>
+    </h1>
     <div id="product-options">
         <div class="product-list-top">
             <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-14-16-mac-nav-202301?wid=200&hei=130&fmt=png-alpha&.v=1670959891635"
                 alt="">
-                <br>
+            <br>
             <a href="#">Mac</a>
         </div>
         <div class="product-list-top">
             <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-13-iphone-nav-202209_GEO_EMEA?wid=200&hei=130&fmt=png-alpha&.v=1661027786072"
                 alt="">
-                <br>
-            <a href="#">iPhone</a>
+            <br>
+            <a href="./iphone.html">iPhone</a>
         </div>
         <div class="product-list-top">
             <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-13-ipad-nav-202210?wid=200&hei=130&fmt=png-alpha&.v=1664912135437"
                 alt="">
-                <br>
+            <br>
             <a href="#">iPad</a>
         </div>
         <div class="product-list-top">
-            <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-13-watch-nav-202209_GEO_IN?wid=200&hei=130&fmt=png-alpha&.v=1661796454107" alt="">
+            <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-13-watch-nav-202209_GEO_IN?wid=200&hei=130&fmt=png-alpha&.v=1661796454107"
+                alt="">
             <br>
             <a href="">Apple Watch</a>
         </div>
         <div class="product-list-top">
-            <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-13-airpods-nav-202209?wid=200&hei=130&fmt=png-alpha&.v=1660676485885" alt="">
+            <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-13-airpods-nav-202209?wid=200&hei=130&fmt=png-alpha&.v=1660676485885"
+                alt="">
             <br>
             <a href="">AirPods</a>
         </div>
         <div class="product-list-top">
-            <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-13-airtags-nav-202108?wid=200&hei=130&fmt=png-alpha&.v=1625783380000" alt="">
+            <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-13-airtags-nav-202108?wid=200&hei=130&fmt=png-alpha&.v=1625783380000"
+                alt="">
             <br>
             <a href="">AirTag</a>
         </div>
         <div class="product-list-top">
-            <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-13-appletv-nav-202210?wid=200&hei=130&fmt=png-alpha&.v=1664628458484" alt="">
+            <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-13-appletv-nav-202210?wid=200&hei=130&fmt=png-alpha&.v=1664628458484"
+                alt="">
             <br>
             <a href="">Apple TV 4K</a>
         </div>
         <div class="product-list-top">
-            <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-13-homepod-nav-202110?wid=200&hei=130&fmt=png-alpha&.v=1633355783000" alt="">
+            <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-13-homepod-nav-202110?wid=200&hei=130&fmt=png-alpha&.v=1633355783000"
+                alt="">
             <br>
             <a href="">Home Pod Mini</a>
         </div>
         <div class="product-list-top">
-            <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-13-accessories-nav-202209?wid=200&hei=130&fmt=png-alpha&.v=166067709top" alt="">
+            <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-13-accessories-nav-202209?wid=200&hei=130&fmt=png-alpha&.v=166067709top"
+                alt="">
             <br>
             <a href="">Accessories</a>
         </div>
     </div>
-    <h2 id="latest-heading" class="store-heading">The latest.<p>Take a look at what’s new right now.</p></h2>
+    <!-- LATEST PRODUCTS SECTION -->
+    <h2 id="latest-heading" class="store-heading">The latest.<p> Take a look at what’s new right now.</p>
+    </h2>
     <div id="latest-cards">
     </div>
-    <h2 id="help-heading" class="store-heading">Help is here.<p>Whenever and however you need it.</p></h2>
+    <!-- HELP SECTION -->
+    <h2 id="help-heading" class="store-heading">Help is here.<p> Whenever and however you need it.</p>
+    </h2>
     <div id="help-cards">
         <div id="help-card-1">
             <p>APPLE SPECIALIST</p>
             <h2>Shop one on one with a Specialist online.</h2>
         </div>
         <div id="help-card-2">
-            <div><h2>Get to know your new device with a<br>free Personal session.</h2></div>
-            <div><h2>Service and<br>support. We're<br>here to help.</h2></div>
+            <div>
+                <h2>Get to know your new device with a<br>free Personal session.</h2>
+            </div>
+            <div>
+                <h2>Service and<br>support. We're<br>here to help.</h2>
+            </div>
         </div>
     </div>
+    <!-- APPLE STORE DIFF SECTION -->
+    <h2 id="store-diff-heading" class="store-heading">The Apple Store difference.<p> Even more reasons to shop with us.
+        </p>
+    </h2>
+    <div id="store-diff-cards">
+        <div>
+            <p style="font-size: 24px;">Flexible ways to pay.
+            <p style="font-size: 24px; color: yellowgreen;">Plus save with instant Cashback and No cost EMI.</p>
+            </p>
+        </div>
+        <div>
+            <p style="font-size: 24px; color: purple;">Trade in your smartphone,
+            <p style="font-size: 24px;">get credit towards new one.</p>
+            </p>
+        </div>
+        <div>
+            <p style="font-size: 24px;">Free delivery direct to your door.</p>
+        </div>
+        <div>
+            <p style="font-size: 24px;">Make them yours.
+            <p style="font-size: 24px; color: deepskyblue;">Engrave mix of emoji,names and numbers for free.</p>
+            </p>
+        </div>
+    </div>
+    <!-- ACCESSORIES SECTION -->
+    <h2 id="accessories-heading" class="store-heading">Accessories.<p> Essentials that pair perfectly with your
+            favourite devices.</p>
+    </h2>
+    <div id="accessories-cardlist" class="carousel" data-flickity='{ "freeScroll": true }'>
+        <div class="carousel-cell">
+            <div class="accessories-cards">
+                <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MQTJ3?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1673374526158"
+                    alt="">
+                <h4>45mm Black Unity Sport Loop</h4>
+                <p>MRP Rs 4500.00 (Incl. of all taxes)</p>
+            </div>
+        </div>
+        <div class="carousel-cell">
+            <div class="accessories-cards">
+                <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MPPJ3?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1662046154499"
+                    alt="">
+                <h4>iPhone 14 Pro Leather Case with MagSafe - Ink</h4>
+                <p>MRP Rs 5900.00 (Incl. of all taxes)</p>
+            </div>
+        </div>
+        <div class="carousel-cell">
+            <div class="accessories-cards">
+                <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MPRY3?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1666123999266"
+                    alt="">
+                <h4>iPhone 14 Silicone Case</h4>
+                <p>MRP Rs 4900.00 (Incl. of all taxes)</p>
+            </div>
+        </div>
+        <div class="carousel-cell">
+            <div class="accessories-cards">
+                <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MQGX3ref?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1660858506731"
+                    alt="">
+                <h4>45mm Beige Braided Solo Loop-Size 6</h4>
+                <p>MRP Rs 9500.00 (Incl. of all taxes)</p>
+            </div>
+        </div>
+        <div class="carousel-cell">
+            <div class="accessories-cards">
+                <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MQDU3?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1664481896530"
+                    alt="">
+                <h4>45mm Black Unity Sport Loop</h4>
+                <p>MRP Rs 4500.00 (Incl. of all taxes)</p>
+            </div>
+        </div>
+    </div>
+    <!-- LOUD N CLEAR SECTION -->
+    <h2 id="loud-heading" class="store-heading">Loud and clear.<p> Unparalleled choices for rich,high-quality sound.</p>
+    </h2>
+    <div id="lound-n-clear-cardlist" class="carousel" data-flickity='{ "freeScroll": true }'>
+        <div class="carousel-cell">
+            <div class="lound-n-clear-cards">
+                <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/homepod-select-midnight-202210?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1670557210097"
+                    alt="">
+                <h4>HomePod - Midnight</h4>
+                <p>MRP Rs. 32900.00 (Incl.of all taxes)</p>
+            </div>
+        </div>
+        <div class="carousel-cell">
+            <div class="lound-n-clear-cards">
+                <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MQD83?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1660803972361"
+                    alt="">
+                <h4>AirPods Pro (2nd generation)</h4>
+                <p>MRP Rs. 26900.00 (Incl.of all taxes)</p>
+            </div>
+        </div>
+        <div class="carousel-cell">
+            <div class="lound-n-clear-cards">
+                <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/homepod-mini-select-yellow-202110?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1632925510000"
+                    alt="">
+                <h4>HomePod mini - Yellow</h4>
+                <p>MRP Rs. 10900.00 (Incl.of all taxes)</p>
+            </div>
+        </div>
+        <div class="carousel-cell">
+            <div class="lound-n-clear-cards">
+                <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MME73?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1632861342000"
+                    alt="">
+                <h4>AirPods (3rd generation) with Lighting charge case</h4>
+                <p>MRP Rs. 19900.00 (Incl.of all taxes)</p>
+            </div>
+        </div>
+        <div class="carousel-cell">
+            <div class="lound-n-clear-cards">
+                <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-max-select-silver-202011?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1604021221000"
+                    alt="">
+                <h4>AirPods Max - Silver</h4>
+                <p>MRP Rs. 59900.00 (Incl.of all taxes)</p>
+            </div>
+        </div>
+    </div>
+    <!-- APPLE EXPERIENCE SECTION -->
+    <h2 id="experience-heading" class="store-heading">The Apple experience.<p> Do even more with Apple Products and services.</p></h2>
+    <div id="experience-cardlist">
+        <div class="experience-cards" style="background: url(https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-50-subscriptions-202108?wid=480&hei=500&fmt=p-jpg&qlt=95&.v=1626375547000);">
+            <h2>Four Apple services. One<br>easy subscription.</h2>
+        </div>
+        <div class="experience-cards" style="background: url(https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-40-applecare-202209?wid=480&hei=500&fmt=p-jpg&qlt=95&.v=1669753330903);">
+            <h2>We've got you covered</h2>
+            <p>AppleCare+ now comes with unlimited<br>repairs for accidental damage protection.</p>
+        </div>
+    </div>
+    <!-- SPECIAL STORES -->
+    <h2 id="special-stores-heading" class="store-heading">Special Stores.<p>Exclusive savings for students and educators.</p></h2>
+    <div id="special-store-card">
+    <p>Education</p>
+    <h2>Save on Mac or iPad with<br>education pricing.</h2>
+    <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/store-card-40-edu-202301?wid=200&hei=250&fmt=p-jpg&qlt=95&.v=1670866608869" alt="">
+    </div>
 </body>
-<!-- <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="./scripts/store.js"></script>
+
 </html>
