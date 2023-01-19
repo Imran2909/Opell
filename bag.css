@@ -1,7 +1,59 @@
-#cartContainer *{
+#cartContainer *,
+#questions *,
+#qline *{
     margin: 0%;
     padding: 0%;
 }
+p{
+    font-size: 17px;
+}
+
+.navBar {
+    background-color: rgb(8, 7, 7);
+    width: 100%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    padding-top: 10px;
+    position: sticky;
+    top: 0;
+}
+
+.navBar>div{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.navBar>div>div:nth-child(1) {
+    width:5%;
+    padding-left:10px;
+}
+.navBar>div>div:nth-child(2) {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navBar>div>div:nth-child(3) {
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+}
+a {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(201, 201, 201);
+}
+a:hover {
+    cursor: pointer;
+    color: rgb(250, 250, 248);
+}
+/* Nav Bar Ends */
 #main{
     width: 900px;
     margin: auto;
@@ -29,6 +81,11 @@
     height: 36px;
     display: block;
     margin: auto;
+}
+
+#checkout:hover{
+    cursor: pointer;
+    background-color: #007bf5;
 }
 
 #checkDivEmptyProductH1{
@@ -60,6 +117,11 @@
     padding: 15px 31px;
 }
 
+#checkDivEmptyProductButtons > button:nth-child(1):hover{
+    cursor: pointer;
+    background-color: #007bf5;
+}
+
 #checkDivEmptyProductButtons > button:nth-child(2){
     border: none;
     border-radius: 10px;
@@ -71,6 +133,11 @@
     display: block;
     margin: auto;
     padding: 15px 31px;
+}
+
+#checkDivEmptyProductButtons > button:nth-child(2):hover{
+    cursor: pointer;
+    background-color: #2c2c2c2d;
 }
 
 #hr1{
@@ -94,7 +161,50 @@
     width: 200px;
 }
 
-#product > div{
+#cartContainerEnd{
+    width: 100%;
+    display: flex;
+    gap: 45px;
+}
+
+#cartContainerEndEmptyDiv{
+    width: 200px;
+}
+
+#productOuterDiv,
+#cartContainerEndDiv{
+    width: 100%;
+}
+
+#cartContainerEndDiv > div{
+    display: flex;
+    justify-content: space-between;
+}
+
+#cartContainerEndDiv > div > h3{
+    font-size: 24px;
+    font-weight: 600;
+    font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+#cartContainerEndDiv > div > p,
+#cartContainerEndDiv > div > h3{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#hr2{
+    width: 100%;
+}
+
+
+
+#productOuterDiv >div{
+    padding-bottom: 10px;
+}
+
+
+
+#productDiv{
     width: 100%;
     font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-weight: 600;
@@ -108,7 +218,7 @@
     width: 300px;
 }
 
-#itemCount{
+.itemCount{
     border: none;
     height: 20px;
     font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -116,24 +226,143 @@
     font-size: 20px;
 }
 
+#emiDiv{
+    display: flex;
+    justify-content: space-between;
+}
+
 #priceremove{
     display: flex;
     gap: 10px;
-    flex-direction: column;
+    justify-content: right;
 }
 
-#priceremove p:nth-child(2){
+#priceremove p{
     align-self: flex-end;
     color: #0071e3;
     font-size: medium;
     font-weight: 400;
 }
 
-#priceremove p:nth-child(2):hover{
+#priceremove p:hover{
     cursor: pointer;
     text-decoration: underline;
 }
 
-@media screen and (max-width:950){
-    
+#lastcheckoutButton{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#lastcheckoutButton > button{
+    margin-top: 35px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0071e3;
+    color: white;    
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 17px;
+    width: 330px;
+    padding: 13px 31px;
+    display: block;
+}
+
+#lastcheckoutButton > button:hover{
+    cursor: pointer;
+    background-color: #007bf5;
+}
+
+#hrhelp1{
+    margin-top: 75px;
+}
+
+#hrhelp2{
+    margin-bottom: 75px;
+}
+
+#newArrivals{
+    width: 900px;
+    height: 400px;
+    margin: auto;
+    background-image: url("https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/apple-new-arrivals-checkout-201804?wid=980&hei=400&fmt=jpeg&qlt=95&.v=1523551959954");
+}
+
+#newArrivals > div{
+    width: 50%;
+    padding: 125px 0%;
+}
+
+#newArrivals h2{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-align: center;
+}
+
+#newArrivals p{
+    text-align: center;
+    font-size: 20px;
+}
+
+#newArrivals a{
+    display: block;
+    text-align: center;
+    color: #0071e3;
+}
+
+#newArrivals a:hover{
+    text-decoration: underline;
+}
+
+#lasthr{
+    margin: 50px 0px;
+}
+
+#questions{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+#questions h2{
+    font-size: 32px;
+    font-weight: 600;
+    font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+#Qlogo{
+    display: block;
+    height: 32px;
+}
+
+#closelogo{
+    display: none;
+    height: 30px;
+}
+
+#qnaDiv{
+    width: 100%;
+    transition: 2s;
+}
+
+#qnahr{
+    width: 100%;
+    margin: 25px 0px;
+}
+
+#qline{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#downIcon{
+    height: 20px;
+}
+
+@media screen and (max-width:900px){
+    .navBar {
+        width: 900px;
+    }
 }
