@@ -333,12 +333,12 @@ a:hover {
 
 #Qlogo{
     display: block;
-    height: 32px;
+    height: 25px;
 }
 
 #closelogo{
     display: none;
-    height: 30px;
+    height: 21px;
 }
 
 #qnaDiv{
@@ -357,12 +357,120 @@ a:hover {
     justify-content: space-between;
 }
 
-#downIcon{
+#downIcon1{
     height: 20px;
+}
+
+#upIcon1{
+    display: none;
+    height: 12px;
+    margin-right: 5px;
+}
+
+#downIcon2{
+    height: 20px;
+}
+
+#upIcon2{
+    display: none;
+    height: 12px;
+    margin-right: 5px;
+}
+
+#downIcon3{
+    height: 20px;
+}
+
+#upIcon3{
+    display: none;
+    height: 12px;
+    margin-right: 5px;
+}
+
+#downIcon4{
+    height: 20px;
+}
+
+#upIcon4{
+    display: none;
+    height: 12px;
+    margin-right: 5px;
+}
+
+#downIcon5{
+    height: 20px;
+}
+
+#upIcon5{
+    display: none;
+    height: 12px;
+    margin-right: 5px;
+}
+
+#downIcon6{
+    height: 20px;
+}
+
+#upIcon6{
+    display: none;
+    height: 12px;
+    margin-right: 5px;
+}
+
+#Qlogo:hover,
+#closelogo:hover,
+#downIcon1:hover,
+#upIcon1:hover,
+#downIcon2:hover,
+#upIcon2:hover,
+#downIcon3:hover,
+#upIcon3:hover,
+#downIcon4:hover,
+#upIcon4:hover,
+#downIcon5:hover,
+#upIcon5:hover,
+#downIcon6:hover,
+#upIcon6:hover{
+    cursor: pointer;
+}
+
+.contanier{
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid black;
+}
+.footer{
+    width: 100%;
+    background-color: rgb(243, 243, 243);
+}
+.footer>div{
+    width: 93%;
+    margin: auto;
+    display: block;
+    padding-bottom: 10px;
+
+}
+.footer>div>div:nth-child(1){
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid rgb(52, 51, 51);
+}
+.footer>div>div:nth-child(2){
+    width: 100%;
+    margin-top: 10px;
+    display: grid;
+    text-align: center;
+    gap: 10px;
+    grid-template-columns: repeat(5,1fr);
+    border-bottom: 1px solid rgb(52, 51, 51) ;
+    
 }
 
 @media screen and (max-width:900px){
     .navBar {
+        width: 900px;
+    }
+    .contanier{
         width: 900px;
     }
 }
