@@ -1,0 +1,82 @@
+*{
+    font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    /* background-color: lightgrey; */
+}
+body{
+    /* background-color: lightgray; */
+}
+/* Heading */
+.store-heading{
+    margin-left: 20%;
+    font-family: Helvetica,Arial,sans-serif;
+    margin-bottom: 60px;
+}
+.store-heading > p{
+    display: inline;
+    color: gray;
+    font-family: Helvetica,Arial,sans-serif;
+}
+/* Search n sort */
+#search-n-sort{
+    /* border: 1px solid black; */
+    margin-left: 20%;
+}
+
+/* Iphone Models */
+#iphone-products-heading{
+    margin-bottom: 20px;
+}
+#iphone-models{
+    margin-left: 20%;
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: smooth;
+    gap: 1.2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+#iphone-models::-webkit-scrollbar{
+    width: 10px;
+    height: 5px;
+}
+#iphone-models::-webkit-scrollbar-thumb{
+    background: black;
+    border-radius: 10px;
+}
+#iphone-models::-webkit-scrollbar-track{
+    background: transparent;
+}
+.iphone-card{
+    scroll-snap-align: start none;
+    background-color: white;
+    margin: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    min-width: 300px;
+    min-height: 400px;
+    text-align: left;
+    padding: 10px 25px;
+    border-radius: 15px;
+}
+.iphone-card>h3{
+    height: 45px;
+}
+.iphone-card>img{
+    width: 100%;
+    /* height: 250px; */
+}
+.iphone-card>div{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: space-around;
+}
+.iphone-card>div>button{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: dodgerblue;
+    color: white;
+    font-weight: bold;
+}
