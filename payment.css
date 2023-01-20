@@ -64,10 +64,14 @@ a:hover {
 #lower{
     display: flex;
     gap: 20px;
+    width: 100%;
     
 }
-#lower>div div{
-    width: 80%;
+#lower>div>div:nth-child(2){
+    margin-left: 0px;
+}
+#lower>div>div{
+    width: 67%;
     border: 1px solid rgb(183, 182, 182);
     padding: 10px;
     margin-top: 10px;
@@ -75,28 +79,29 @@ a:hover {
     gap:2px;
     border-radius: 10px;
 }
-#lower>div div:nth-child(9){
+#lower>div div:nth-child(11){
     border: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-#lower>div div:nth-child(9) p{
+#lower>div div:nth-child(11) p{
     color:rgb(0,113,227);
 }
 #main{
     width: 50%;
 }
 
-#card{
-    /* display: none; */
-    width: 60%;
+#main{
+    display: none;
+    
+    
 }
 #main>div:nth-child(2){
     border: none;
 }
 #num{
-    width:79%;
+    width:60%;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px;
@@ -108,12 +113,148 @@ a:hover {
     border-radius: 5px;
 }
 #cvv{
+    width: 20%;
+    margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 #main img{
     width: 12%;
 }
 #button{
     border: none;
+}
+#card-pic{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#save-button button{
+    margin: 10px;
+    padding: 10px;
+    width: 70%;
+    font-size: 16px;
+    background-color: rgb(0,113,227);
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+#place{
+    margin: 10px;
+    margin-bottom: 60px;
+    padding: 10px;
+    width: 36%;
+    font-size: 16px;
+    background-color: rgb(0,113,227);
+    color: white;
+    border-radius: 10px;
+    border: none;
+
+}
+#footer{
+background-color: rgb(245,245,247);
+}
+#footer>div{
+    margin-top: 75px;
+    padding-top: 80px;
+    width: 60%;
+    margin: auto;
+    padding-bottom: 50px;
+}
+#footer>div>p{
+    font-size: small;
+}
+
+.popup{
+    width: 400px;
+    background:  rgb(0,113,227);;
+    border-radius: 6px;
+    position: absolute;
+    top:0%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    visibility: hidden;
+    transition: transform 0.4s,top 0.4s;
+}
+.open-popup{
+    visibility: visible;
+    top:110%;
+    transform: translate(-50%,-50%) scale(1);
+}
+.popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.popup h2{
+    font-size: 38px;
+    font-weight: 500%;
+    margin: 30px 0 10px;
+    color:white
+}
+.popup button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #6fd649;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    color:white
+}
+#lower>div div:nth-child(8){
+border: none;
+}
+.contain{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    border: none;
+    display: none;
+}
+#capt{
+    width: 110px;
+    height:40px;
+    background-color: rgb(188, 182, 182);
+    padding: 5px;
+    border: none;
+    float: left;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    color: white;
+    font-size: large;
+}
+#refresh{
+    float: left;
+    height:82px;
+    border-radius: 5px;
+}
+#refresh img{
+    margin-top: 10px;
+    cursor: pointer;
+}
+#textinput{
+    width: 110px;
+    height:40px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: large;
+}
+.contain button{
+    height:50px;
+    border-radius: 5px;
+    background-color:rgb(0,113,227) ;
+    font-size: large;
+    color: white;
+    border: none;
+    margin-left: 10px;
+   padding-left: 10px;
+   padding-right: 10px;
+   transition: 5s;
 }
