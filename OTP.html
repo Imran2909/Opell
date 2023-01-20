@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./OTP.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Verify Your Card Details</h2>
+        <p>We Have sent You The Six Digit Code To Your Personal Mobile Number Ending With ..9041 <br>
+        Enter The Code Below To Confirm Your Card Details </p>
+        <div class="code-container">
+            <input type="password" id="cod" class="code code1" placeholder="0" min="0" max="9" />
+            <input type="password" class="code code2" placeholder="0" min="0" max="9" />
+            <input type="password" class="code code3" placeholder="0" min="0" max="9" />
+            <input type="password" class="code code4" placeholder="0" min="0" max="9" />
+            <input type="password" class="code code5" placeholder="0" min="0" max="9" />
+            <input type="password" class="code code6" placeholder="0" min="0" max="9" />
+    </div>
+    <small id="wrong" style="color:red"></small>
+
+      <div>
+        <button type="button" class="btn btn-primary" onclick="openPopup()">Verify And Pay</button>
+      </div>
+      <small>
+        If You Don't Receive a Code !! <strong>RESEND</strong>
+      </small>
+    </div>
+
+    
+        <div class="popup" id="popup">
+            <img src="C:\Users\91701\Downloads\404-tick.png"/>
+            <h2>Thank You</h2>
+            <p>Payment Sucessfully Done Order Placed Successfully thanks!!</p>
+            <button type="button" class="ok"   onclick="closePopup()">OK</button>
+        </div>
+
+</body>
+</html>
+<script src="OTP.js">
+
+</script>
