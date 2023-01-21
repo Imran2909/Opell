@@ -6,6 +6,12 @@ var remove=document.getElementById("remove");
 var price=document.getElementById("price");
 var emi=document.getElementById("emi");
 
+var checkout=document.getElementById("checkout");
+
+checkout.addEventListener("click",()=>{
+    location.href="address.html";
+});
+
 var cartData=[];
 var userData={};
 
@@ -277,8 +283,14 @@ function display(cart){
             </div>
         </div>
         <div id="lastcheckoutButton">
-            <button>Continue to Shipping Address</button>
+            <button id="addressButton">Continue to Shipping Address</button>
         </div>`;
+
+        var addressButton=document.getElementById("addressButton");
+
+        addressButton.addEventListener("click",()=>{
+            location.href="address.html";
+        });
 
         price.innerText=totalcartprice;
         emi.innerText=totalemiprice;
