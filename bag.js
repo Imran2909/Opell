@@ -1,4 +1,6 @@
-const Url="https://63c793e3e52516043f4040ed.mockapi.io/users/29";
+var id=JSON.parse(localStorage.getItem("id"));
+
+const Url=`https://63c793e3e52516043f4040ed.mockapi.io/users/${id}`;
 
 var cartContainer=document.getElementById("cartContainer");
 var checkDiv=document.getElementById("checkDiv");
