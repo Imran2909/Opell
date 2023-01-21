@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./payment.css">
 </head>
 <body>
+    <div class="cont">
     <div class="navBar">
         <div>
             <div>
@@ -39,7 +40,7 @@
     <div id="container">
         <div id="upper">
             <h2>Checkout</h2>
-            <p>show Order Summary :₹<span>0</span>.00</p>
+            <p>Show Order Summary :₹<span id="">0</span>.00</p>
         </div><hr>
         <div id="lower">
             <div>
@@ -65,12 +66,20 @@
                     <img src="https://www.anthropologie.com/static/v3/images/maestro-d8ba8fd50606b932d7baf4665404da59.svg"/>
                     
                 </div>
-                <div id="button"><button>Save And Apply</button></div>
+                <div id="save-button"><button>Save And Apply</button></div>
                 </div>
                 
                 <div><h3>Net Banking</h3></div>
                 <div><h3>UPI</h3></div>
-                <div><h3>Cash On Delivery</h3></div>
+                <div id="cash"><h3>Cash On Delivery</h3></div>
+                <div class="contain">
+                    <input type="text" id="capt" readonly="readonly">
+                    <div id="refresh"><img src="data:image/png;base64,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 " width="60px"  onclick="cap()"></div>
+                    <input type="text" id="textinput">
+                    <button onclick="validcap()">Check</button>
+                </div>
+                <div style="border:none;margin-bottom:0px;"><small id="small"></small>
+                </div>
                 <div><h3>Digital Payment On Delivery</h3></div>
                 <div><h3>Pay Over Time.</h3><p>Learn more about EMI options</p></div>
                 <div><h3>Credit Card EMI</h3></div>
@@ -85,7 +94,42 @@
             </div>
         </div>
         <hr>
+        <button id="place" onclick="openPopup()">Place Your Order</button>
     </div>
+    <hr>
+     <p style="margin-left: 200px;">Need some help? <span style="color:rgb(0,113,227);">Chat now </span>(opens in new window)or call 000800 040 1966.</p>
+     <hr>
+     <div id="footer">
+        <div><p>
+            § No Cost EMI is available with the purchase of an eligible product made using qualifying credit or debit cards on 3- or 6-month tenures from most leading banks. Minimum order spend applies as per your credit or debit card’s issuing bank threshold. Offer cannot be combined with Apple Store for Education or Corporate Employee Purchase Plan pricing. Credit or debit card eligibility is subject to terms and conditions between you and your credit or debit card–issuing bank. Offer may be revised or withdrawn at any time without any prior notice. Terms & Conditions apply.<br>
+            
+            Representative example:<br>
+            Based off a 6-month tenure. iPhone 14 at ₹79900 total cost includes 14% p.a. and No Cost EMI savings of ₹3164, paid over 6 months as six monthly payments of ₹13317.
+            
+            §§ Instant savings, otherwise referred to as Instant Cashback on the Apple Store Online, is available with the purchase of an eligible product for qualifying HDFC Bank Credit Cards & HDFC Bank Credit Card EMI only. Minimum transaction value of ₹10001 applies. Click here to see instant savings amounts and eligible devices. Instant savings is available for up to two orders per rolling 90-day period with an eligible card. Card eligibility is subject to terms and conditions between you and your card-issuing bank. Total transaction value is calculated after any trade-in credit or eligible discount applied. Any subsequent order adjustment(s) or cancellation(s) may result in instant savings being recalculated, and any refund may be adjusted to account for instant savings clawback; this may result in no refund being made to you. Offer may be revised or withdrawn at any time without any prior notice. Terms & conditions apply. Offer cannot be combined with Apple Store for Education or Corporate Employee Purchase Plan pricing. Multiple separate orders cannot be combined for instant savings.<br>
+            
+            §§§ Get extra trade-in credit, otherwise referred to as additional exchange savings or exchange bonus, when you trade in an eligible iPhone and purchase a new Apple device until 5 March 2023. Extra trade-in credit of ₹5000 is available while trading in iPhone 12, iPhone 11, iPhone XR or iPhone X and ₹4500 on iPhone 7.
+            
+            Representative Example:<br>
+            Extra trade-in credit has been added on top of base trade-in credit. Existing trade-in credit when trading in iPhone 11 is ₹20000. During the offer, a consumer might get ₹25000 as total trade-in credit (base trade-in credit of ₹20000 + extra trade-in credit of ₹5000). Additional terms from Apple or Apple’s trade-in partners may apply.
+            
+            * Offer is available to new subscribers who connect an eligible device to an Apple device running iOS 15 or iPadOS 15 or later, for a limited time only. Offer valid for three months after eligible device pairing. Plan automatically renews at your region’s price per month until cancelled. No purchase necessary for current owners of eligible devices. Service availability varies by region. Restrictions and other terms apply.
+            1. Trade-in values will vary based on the condition, year and configuration of your trade-in device and is computed on Maximum Retail Price. You must be at least 18 years old to be eligible to trade in for credit. Not all devices are eligible for credit. More details are available from Apple’s trade-in partner for trade-in and recycling of eligible devices. Restrictions and limitations may apply. Credit applied towards your new iPhone will be based on the received device matching the description you provided when your estimate was made and upon validation by the courier. Apple reserves the right to refuse or limit the quantity of any device for any reason.
+            2. Special pricing available to qualified customers. To learn more about how to start qualifying for special pricing, talk to an Apple Specialist in a store or give us a call on 000800 040 1966.</p><hr>
+         <p>More ways to shop: Find a retailer near you. Or call 000800 040 1966.<br>
+
+            India
+            Copyright © 2023 Apple Inc. All rights reserved.<hr>
+            Privacy Policy | Terms of Use | Sales | Policy | Legal Site | Map</p></div>
+     </div>
+    </div>
+   <!-- popup page -->
+   <div class="popup" id="popup">
+    <img src="C:\Users\91701\Downloads\404-tick.png"/>
+    <h2>Thank You</h2>
+    <p style="color:white">Your Order Placed Successfully thanks!!</p>
+    <button type="button" class="ok"   onclick="closePopup()">OK</button>
+</div>
 
 </body>
 </html>
