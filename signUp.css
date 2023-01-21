@@ -1,5 +1,5 @@
 *{
-    margin: 0px;
+    margin: 1px;
 }
 .navBar {
     background-color: rgb(8, 7, 7);
@@ -165,4 +165,13 @@ button:hover {
     color: black;
     margin-left: 20px;
     margin-top: 2px;
+}
+
+#aLI{
+    width: 200px;
+}
+
+#amn{
+    height: 380px;
+    margin-top: 140px;
 }

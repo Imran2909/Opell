@@ -4,9 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opell</title>
-    <link rel="icon" width="150%" style="border-radius: 10px;" type="image" href="./logo.png/Opell1024_1.png">
+    <title>Document</title>
     <link rel="stylesheet" href="./signUp.css">
+    <style>
+        .main{
+            height: auto;
+            margin-top: 20px;
+        }
+        .main>div:nth-child(1){
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .main>div>button{
+            font-size: 16px;
+            font-weight: 500;
+            background-color:rgb(20, 188, 255)
+        }
+        .main>div>button>a{
+            color: white;
+        }
+        .main>div>button:nth-child(1){
+            background-color: green;
+        }
+        table>thead>tr>th{
+            border: 1px solid rgb(167, 161, 161);
+            width: 150px;
+            height: 40px;
+            background-color: gold;
+            
+        }
+        table{
+            border-collapse: collapse; 
+            margin:20px auto;
+            text-align: center;
+        }
+        #idn{
+            width: 80px;
+        }
+        #name{
+            width: 180px;
+        }
+        #emel{
+            width: 240px;
+        }
+        #pswd{
+            width: 180px;
+        }
+        .footer{
+            margin-top: 50px;
+        }
+        #tbod>tr>td{
+            border: 1px solid rgb(161, 153, 153);
+            margin-top: -10px;
+        }
+        #tbod>tr>td>button{
+            /* border: 1px solid black; */
+            width: 120px;
+        }
+        #tbod>tr>td>button:hover{
+            background-color: rgb(216, 48, 48);
+        }
+        #dbtn{
+            margin:10px 0px;
+            height: 30px;
+            border-radius: 8px;
+            font-size: 18px;
+            background-color: rgb(255, 17, 0);
+        }
+
+
+
+        /* 33 */
+    </style>
 </head>
 <body>
     <div class="navBar">
@@ -15,7 +84,7 @@
                 <a href="./index.html"><img width="150%" style="border-radius: 5px;" src="./logo.png/Opell1024_1.png" alt=""></a>
             </div>
             <div>
-                <a href="./store.html">Store</a>
+                <a href="">Store</a>
                 <a href="">Mac</a>
                 <a href="">iPad</a>
                 <a href="">iPhone</a>
@@ -37,29 +106,32 @@
         </div>
 
     </div>
-    <div class="contanier">
+
+    <div class="main">
         <div>
-            <img src="./logo.png/Opell1024_1.png" alt=""></div>
-        <div>
-        <button id="SU">SIGN UP</button>
-        <button id="LI">LOG IN</button>
-        <form id="signIn">
-            <input type="text" placeholder="Enter your first name" id="name" required><br>
-            <input type="text" placeholder="Enter your last name" id="lname" required><br>
-            <input type="email" placeholder="Enter your mail" id="mail" required><br>
-            <input type="password" placeholder="Enter your password"  id="password" required><br>
-            <input type="text" placeholder=" Re-enter your password" id="Repassword" required><br>
-            <button id="signup">Sign Up</button><br>
-            <a href="" id="already">Already have account</a>
-        </form>
-        <form id="logIn">
-            <input type="email" placeholder="enter your mail"  id="enteredmail" required><br>
-            <input type="password" placeholder="enter your password" id="enteredpassword" required><br>
-            <button id="logn">Log In</button>
-        </form>
+            <button> <a href="admin.html">User Details</a></button>
+            <button> <a href="admin.html">Product Details</a></button>
+            <button> <a href="admin.html">Add new product</a></button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th id="idn">ID No.</th>
+                    <th id="name">First Name</th>
+                    <th id="name"> Last Name</th>
+                    <th id="emel">Email</th>
+                    <th id="pswd">Password</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="tbod">
+
+            </tbody>
+        </table>
+
     </div>
-    
-    </div>
+
     <div class="footer">
         <div>
             <div>
@@ -163,6 +235,66 @@
             <p>More Ways to Shop:Find an Apple Store or Other Retailer  near You. Or call 1-8000-MY-APPLE </p>
         </div>
      </div>
+
+
 </body>
 </html>
-<script src="signup.js"></script>
+<script>
+    let all=[]
+    let url="https://63c793e3e52516043f4040ed.mockapi.io/users";
+    fetch(url).then((res)=>res.json()).then((data)=>{
+        console.log(data)
+        data.forEach((elem,i)=>{
+            all.push(elem)
+        })
+        disaplyData(data)
+    }).catch((err)=>{
+        // alert("Error in API!")
+    })
+
+    var idn;
+    function disaplyData(Data){
+        document.querySelector("tbody").innerHTML=""
+        Data.forEach((elem,i)=>{
+            let tr=document.createElement("tr");
+            let td1=document.createElement("td");
+            td1.innerText=elem.id;
+            let td2=document.createElement("td");
+            td2.innerText=elem.firstname;
+            let td3=document.createElement("td");
+            td3.innerText=elem.lastname;
+            let td4=document.createElement("td");
+            td4.innerText=elem.emailid;
+            let td5=document.createElement("td");
+            td5.innerText=elem.password;
+            let td6=document.createElement("td");
+            let btn=document.createElement("button");
+            btn.setAttribute("id","dbtn")
+            btn.innerText="Delete";
+            btn.addEventListener("click",()=>{
+                idn=elem.id;
+                deleteItem()
+            })
+            td6.append(btn)
+            tr.append(td1,td2,td3,td4,td5,td6);
+            document.querySelector("tbody").append(tr)
+        })
+
+    }
+
+
+    function deleteItem(){
+        function deletes(){
+       fetch(`${url}/${idn}` ,{
+        method: 'DELETE', 
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    })
+}
+deletes()
+window.location.assign("admin.html")
+    }
+
+
+</script>
