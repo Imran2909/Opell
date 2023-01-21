@@ -154,6 +154,7 @@
     margin-bottom: 60px;
     justify-content: space-around;
     align-items: center;
+    gap: 20px;
 }
 #help-card-1{
     border-radius: 20px;
