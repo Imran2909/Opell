@@ -7,6 +7,7 @@
     <title>Opell</title>
     <link rel="icon" width="150%" style="border-radius: 10px;" type="image" href="./logo.png/Opell1024_1.png">
     <link rel="stylesheet" href="./signUp.css">
+
 </head>
 <body>
     <div class="navBar">
@@ -15,7 +16,7 @@
                 <a href="./index.html"><img width="150%" style="border-radius: 5px;" src="./logo.png/Opell1024_1.png" alt=""></a>
             </div>
             <div>
-                <a href="./store.html">Store</a>
+                <a href="">Store</a>
                 <a href="">Mac</a>
                 <a href="">iPad</a>
                 <a href="">iPhone</a>
@@ -39,23 +40,14 @@
     </div>
     <div class="contanier">
         <div>
-            <img src="./logo.png/Opell1024_1.png" alt=""></div>
-        <div>
-        <button id="SU">SIGN UP</button>
-        <button id="LI">LOG IN</button>
-        <form id="signIn">
-            <input type="text" placeholder="Enter your first name" id="name" required><br>
-            <input type="text" placeholder="Enter your last name" id="lname" required><br>
-            <input type="email" placeholder="Enter your mail" id="mail" required><br>
-            <input type="password" placeholder="Enter your password"  id="password" required><br>
-            <input type="text" placeholder=" Re-enter your password" id="Repassword" required><br>
-            <button id="signup">Sign Up</button><br>
-            <a href="" id="already">Already have account</a>
-        </form>
-        <form id="logIn">
-            <input type="email" placeholder="enter your mail"  id="enteredmail" required><br>
-            <input type="password" placeholder="enter your password" id="enteredpassword" required><br>
-            <button id="logn">Log In</button>
+            <img src="./logo.png/Opell1024_1.png" alt="">
+        </div>
+        <div id="amn">
+        <button id="aLI">LOG IN AS A ADMIN</button>
+        <form id="alogIn">
+            <input type="email" placeholder="Username"  id="admail" required><br>
+            <input type="password" placeholder="Password" id="adpass" required><br>
+            <button id="alogn">Log In</button>
         </form>
     </div>
     
@@ -165,4 +157,23 @@
      </div>
 </body>
 </html>
-<script src="signup.js"></script>
+<script>
+
+    document.getElementById("alogn").addEventListener("click",(pre)=>{
+        pre.preventDefault();
+        let user=document.getElementById("admail").value;
+        let pass=document.getElementById("adpass").value;
+
+        if(user=="" || pass==""){
+            alert("Please fill all Data")
+        }
+        if(user=="imran" && pass==1275){
+            alert("Log in Successful!")
+            window.location.assign("admin.html")
+        }
+        else{
+            alert("Incorrect credentials!")
+        }
+    })
+
+</script>
