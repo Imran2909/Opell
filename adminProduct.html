@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="./signUp.css">
     <style>
         .main{
@@ -24,14 +24,16 @@
             color: white;
         }
         .main>div>button:nth-child(1){
+            background-color:rgb(20, 188, 255)
+        }
+        .main>div>button:nth-child(2){
             background-color: green;
         }
         table>thead>tr>th{
             border: 1px solid rgb(167, 161, 161);
             width: 150px;
             height: 40px;
-            background-color: gold;
-            
+            background-color: gold;  
         }
         table{
             border-collapse: collapse; 
@@ -55,8 +57,9 @@
         }
         #tbod>tr>td{
             border: 1px solid rgb(161, 153, 153);
-            margin-top: -10px;
+            /* margin-top: -10px; */
         }
+      
         #tbod>tr>td>button{
             /* border: 1px solid black; */
             width: 120px;
@@ -70,6 +73,12 @@
             border-radius: 8px;
             font-size: 18px;
             background-color: rgb(255, 17, 0);
+        }
+        #imgi{
+            height: 100px;
+            /* border: 1px solid rgb(161, 153, 153); */
+            width:100px;
+            /* margin-top: 10px; */
         }
 
 
@@ -118,10 +127,10 @@
             <thead>
                 <tr>
                     <th id="idn">ID No.</th>
-                    <th id="name">First Name</th>
-                    <th id="name"> Last Name</th>
-                    <th id="emel">Email</th>
-                    <th id="pswd">Password</th>
+                    <th id="name">Title</th>
+                    <th id="name">Image</th>
+                    <th id="emel">Price</th>
+                    <th id="pswd">EMI</th>
                     <th>Delete</th>
                 </tr>
             </thead>
@@ -237,20 +246,36 @@
      </div>
 
 
+
 </body>
 </html>
 <script>
-    let all=[]
-    let url="https://63c793e3e52516043f4040ed.mockapi.io/users";
-    fetch(url).then((res)=>res.json())
-     .then((data)=>{
-        // console.log(data)
-        data.forEach((elem,i)=>{
+    let ShopiPhone=[];
+    let all=[];
+    var acce=[];
+    var removed;
+    var allmodel=[];
+   let url="https://63c64ff64ebaa80285433dad.mockapi.io/apple";
+    fetch(url).then((res)=>{ return res.json()}).then((data)=>{
+        data[0].ShopiPhone[1].Accessories.forEach((elem,i)=>{
+            acce.push(elem)
+        })
+        data[0].ShopiPhone[0].Allmodels.forEach((elem,i)=>{
+            allmodel.push(elem)
+        })
+        console.log(allmodel)
+        console.log(acce)
+        // console.log(data[0].ShopiPhone[0].Allmodels,data[0].ShopiPhone[1].Accessories)
+        data[0].ShopiPhone[0].Allmodels.forEach((elem,i)=>{
             all.push(elem)
         })
-        disaplyData(data)
+        data[0].ShopiPhone[1].Accessories.forEach((elem,i)=>{
+            all.push(elem)
+        })
+        disaplyData(all)
+        // console.log(all) 
     }).catch((err)=>{
-        // alert("Error in API!")
+          alert("Error in API!")
     })
 
     var idn;
@@ -261,40 +286,77 @@
             let td1=document.createElement("td");
             td1.innerText=elem.id;
             let td2=document.createElement("td");
-            td2.innerText=elem.firstname;
+            td2.innerText=elem.title;
             let td3=document.createElement("td");
-            td3.innerText=elem.lastname;
+            let im=document.createElement("img");
+            td3.append(im)
+            im.setAttribute("id","imgi")
+            im.src=elem.image;
             let td4=document.createElement("td");
-            td4.innerText=elem.emailid;
+            td4.innerText=elem.price;
             let td5=document.createElement("td");
-            td5.innerText=elem.password;
+            if(elem.emi==undefined){
+                td5.innerText="N/A for this product"
+            }
+            else{
+                td5.innerText=elem.emi;
+            }
             let td6=document.createElement("td");
             let btn=document.createElement("button");
             btn.setAttribute("id","dbtn")
             btn.innerText="Delete";
             btn.addEventListener("click",(pe)=>{
                 pe.preventDefault()
-                idn=elem.id;
+                removed=elem;
+                // console.log(removed)
+            //     idn=elem.id;
                 deleteItem()
-                alert("Delete user of Id no."+idn)
+            //     // alert("Delete user of Id no."+idn)
             })
             td6.append(btn)
             tr.append(td1,td2,td3,td4,td5,td6);
             document.querySelector("tbody").append(tr)
         })
-
     }
 
     function deleteItem(){
         function deletes(){
-       fetch(`${url}/${idn}`,{
-        method: 'DELETE', 
-        headers:{
-            'Content-Type': 'application/json'
-        }
-    })
+
+        
+
+
+    //    fetch(`https://63c64ff64ebaa80285433dad.mockapi.io/apple/1`,{
+    //     method: 'DELETE', 
+    //     headers:{
+    //         'Content-Type': 'application/json'
+    //     }
+    // })
+    console.log(removed)
 }
 deletes()
-location.reload()
+// location.reload()
     }
+
+
+
+//     const Url=`https://63c793e3e52516043f4040ed.mockapi.io/users/${id}`;
+// function removeItem(item){
+//     console.log(item.id);
+//     cartData=cartData.filter((element)=>element.id!=item.id);
+//     display(cartData);
+//     userData.cart=cartData;
+//     update(userData);
+// }
+// async function update(userdata){
+//     let res=await fetch(Url,{
+//         method: 'PUT',
+//         headers:{
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(userdata)
+//     })
+//     let d=await res.json();
+// }
+
+
 </script>
