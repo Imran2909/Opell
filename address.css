@@ -87,7 +87,7 @@ a:hover {
     margin-top: 35px;
 }
 
-#textbox{
+.textbox{
     padding: 15px 0px;
     border: none;
     border: 2.5px solid rgb(250, 105, 105);
@@ -100,7 +100,7 @@ a:hover {
     margin-bottom: 5px;
 }
 
-#textbox:hover{
+.textbox:hover{
     border: 2.5px solid rgb(113, 113, 247);
     position: relative;
     top: 0px;

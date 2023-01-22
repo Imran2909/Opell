@@ -4,6 +4,7 @@ var closelogo=document.getElementById("closelogo");
 var qnaDiv=document.getElementById("qnaDiv");
 var payButton=document.getElementById("payButton");
 
+var textbox1=document.getElementById("textbox1");
 
 payButton.addEventListener("click",(e)=>{
     e.preventDefault();
