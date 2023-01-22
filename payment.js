@@ -47,9 +47,13 @@ function validcap(){
     }
 }
 
+
+
 let popup=document.getElementById("popup")
 function openPopup(){
+    
     let body=document.querySelector(".cont")
+    
     body.style.opacity="0.5"
     popup.classList.add("open-popup")
   
@@ -87,7 +91,16 @@ function closePopup(){
     window.location.href="index.html"
 }
 document.querySelector("#save-button").addEventListener("click",function(){
-    window.location.href="OTP.html"
+  let cardNo=document.querySelector("#num").value
+  let ex=document.querySelector("#ex").value
+  let cvv=document.querySelector("#cvv").value
+  if(cardNo==""||ex==""||cvv==""){
+    document.getElementById("alert").textContent="Please Fill All The Required Details"
+  }else{
+ window.location.href="OTP.html"
+   
+  }
+   
 })
 
 var id=JSON.parse(localStorage.getItem("id"));

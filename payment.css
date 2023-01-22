@@ -67,6 +67,10 @@ a:hover {
     gap: 20px;
     width: 100%;
     
+    
+}
+#lower>div:nth-child(1){
+    cursor: pointer;
 }
 #lower>div>div:nth-child(2){
     margin-left: 0px;
@@ -258,4 +262,7 @@ border: none;
    padding-left: 10px;
    padding-right: 10px;
    transition: 5s;
+}
+button{
+    cursor: pointer;
 }
