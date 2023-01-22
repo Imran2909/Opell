@@ -305,10 +305,18 @@ function display(cart){
             <h1 id="checkDivEmptyProductH1">Your bag is empty.</h1>
             <p id="checkDivEmptyProductP">Sign in to see if you have any saved items. Or continue shopping.</p>
             <div id="checkDivEmptyProductButtons">
-                <button>Sign In</button>
-                <button>Continue Shopping</button>
+                <button id="signin">Sign In</button>
+                <button id="shop">Continue Shopping</button>
             </div>
     `;
+        var signin=document.getElementById("signin");
+        var shop=document.getElementById("shop");
+        signin.addEventListener("click",()=>{
+            location.href="signUp.html";
+        });
+        shop.addEventListener("click",()=>{
+            location.href="iphone.html";
+        });
     }
 }
 

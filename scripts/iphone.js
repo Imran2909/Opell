@@ -5,6 +5,8 @@ let id = JSON.parse(localStorage.getItem("id"));
 let modeldata = [];
 let accessoriesdata = [];
 
+const url = `https://63c793e3e52516043f4040ed.mockapi.io/users/${id}`;
+
 inputValue.addEventListener("input", () => {
     let value = modeldata.filter((item) => {
         return item.title.toLowerCase().includes(inputValue.value.toLowerCase())
@@ -24,10 +26,11 @@ window.addEventListener("load", () => {
         return res.json()
     })
         .then((result) => {
+            console.log(result[0]);
             modeldata = result[0].ShopiPhone[0].Allmodels;
-            accessoriesdata = result[0].ShopiPhone[1].Accessories;
+            accessoriesdata = result[0].ShopiPhone[0].Accessories;
             let modelsData = (result[0].ShopiPhone[0].Allmodels);
-            let accessoriesData = (result[0].ShopiPhone[1].Accessories);
+            let accessoriesData = (result[0].ShopiPhone[0].Accessories);
             showData(iPhoneModels, modelsData)
             showData(iPhoneAccessories, accessoriesData)
             console.log(modelsData)
@@ -57,7 +60,7 @@ sortPrice.addEventListener("change", () => {
         })
             .then((result) => {
                 let fetched = (result[0].ShopiPhone[0].Allmodels);
-                let fetchedAcc = (result[0].ShopiPhone[1].Accessories);
+                let fetchedAcc = (result[0].ShopiPhone[0].Accessories);
                 console.log(fetched)
                 showData(iPhoneModels, fetched)
                 showData(iPhoneAccessories, fetchedAcc)
@@ -87,29 +90,33 @@ function showData(div, data) {
         let button = document.createElement("button");
         button.innerText = "Add to Cart";
         button.addEventListener("click", () => {
-            let cartArray = JSON.parse(localStorage.getItem("cart")) || [];
-            let isAlreadyinCart = false;
-            for (let i = 0; i < cartArray.length; i++) {
-                if (cartArray[i].id === element.id) {
-                    isAlreadyinCart = true;
-                    break;
+            // let cartArray = JSON.parse(localStorage.getItem("cart")) || [];
+            let cartArray = [];
+            fetch(url).then((res) => {
+                return res.json()
+            }).then((result) => {
+                cartArray=result.cart;
+                // console.log(cartArray);
+                let isAlreadyinCart = false;
+                for (let i = 0; i < cartArray.length; i++) {
+                    if (cartArray[i].id === element.id) {
+                        isAlreadyinCart = true;
+                        break;
+                    }
                 }
-            }
-            if (isAlreadyinCart==true) {
-                alert("Product Already in Cart");
-            } else {
-                cartArray.push(element);
-                localStorage.setItem("cart", JSON.stringify(cartArray));
-                alert("Added To Cart");
-                const url = `https://63c64ff64ebaa80285433dad.mockapi.io/users/${id}`;
-                fetch(url).then((res) => {
-                    return res.json()
-                }).then((result) => {
+                if (isAlreadyinCart==true) {
+                    alert("Product Already in Cart");
+                } else {
+                    cartArray.push(element);
+                    localStorage.setItem("cart", JSON.stringify(cartArray));
+                    alert("Added To Cart");
+                    
                     result.cart = cartArray;
-                    update(result)
-                })
-            }
-            console.log(cartArray)
+                    update(result);
+                }
+                // console.log(cartArray);
+            });
+            
         })
         innerDiv.append(price, button);
         card.append(title, img, innerDiv)
