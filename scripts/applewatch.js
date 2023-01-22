@@ -22,7 +22,7 @@ inputValue.addEventListener("input", () => {
 
 window.addEventListener("load", () => {
     // FETCH FOR DEFAULT
-    fetch("https://63c64ff64ebaa80285433dad.mockapi.io/apple").then((res) => {
+    fetch("https://63c8fe7d904f040a9653e84b.mockapi.io/test").then((res) => {
         return res.json()
     })
         .then((result) => {
@@ -54,7 +54,7 @@ sortPrice.addEventListener("change", () => {
         showData(iPhoneModels, fetched)
         showData(iPhoneAccessories, fetchedAcc)
     } else {
-        let filtered = fetch("https://63c64ff64ebaa80285433dad.mockapi.io/apple");
+        let filtered = fetch("https://63c8fe7d904f040a9653e84b.mockapi.io/test");
         filtered.then((res) => {
             return res.json()
         })
