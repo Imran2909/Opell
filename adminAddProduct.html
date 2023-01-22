@@ -1,75 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="./signUp.css">
     <style>
-        .main{
+        .main {
             height: auto;
             margin-top: 20px;
         }
-        .main>div:nth-child(1){
+
+        .main>div:nth-child(1) {
             display: flex;
             justify-content: space-evenly;
         }
-        .main>div>button{
+
+        .main>div>button {
             font-size: 16px;
             font-weight: 500;
-            background-color:rgb(20, 188, 255)
+            background-color: rgb(20, 188, 255)
         }
-        .main>div>button>a{
+
+        .main>div>button>a {
             color: white;
         }
-        .main>div>button:nth-child(1){
+
+        .main>div>button:nth-child(1) {
+            background-color: rgb(20, 188, 255)
+        }
+
+        .main>div>button:nth-child(3) {
             background-color: green;
         }
-        table>thead>tr>th{
+
+        table>thead>tr>th {
             border: 1px solid rgb(167, 161, 161);
             width: 150px;
             height: 40px;
             background-color: gold;
-            
         }
-        table{
-            border-collapse: collapse; 
-            margin:20px auto;
+
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
             text-align: center;
         }
-        #idn{
+
+        #idn {
             width: 80px;
         }
-        #name{
+
+        #name {
             width: 180px;
         }
-        #emel{
+
+        #emel {
             width: 240px;
         }
-        #pswd{
+
+        #pswd {
             width: 180px;
         }
-        .footer{
+
+        .footer {
             margin-top: 50px;
         }
-        #tbod>tr>td{
+
+        #tbod>tr>td {
             border: 1px solid rgb(161, 153, 153);
-            margin-top: -10px;
+            /* margin-top: -10px; */
         }
-        #tbod>tr>td>button{
+
+        #tbod>tr>td>button {
             /* border: 1px solid black; */
             width: 120px;
         }
-        #tbod>tr>td>button:hover{
+
+        #tbod>tr>td>button:hover {
             background-color: rgb(216, 48, 48);
         }
-        #dbtn{
-            margin:10px 0px;
+
+        #dbtn {
+            margin: 10px 0px;
             height: 30px;
             border-radius: 8px;
             font-size: 18px;
             background-color: rgb(255, 17, 0);
+        }
+
+        #imgi {
+            height: 100px;
+            /* border: 1px solid rgb(161, 153, 153); */
+            width: 100px;
+            /* margin-top: 10px; */
+        }
+
+        #addit {
+            margin: 60px auto;
+            width: 500px;
+            height: 510px;
+            background-color: rgb(243, 243, 243);
+            box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+            border-bottom: 3px solid black;
+            border-top: 3px solid black;
+            border-radius: 20px;
+        }
+
+        #addit>input {
+            margin-top: 60px;
+            margin-bottom: -50px;
+            margin-left: 36px;
+            width: 80%;
+            height: 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #addp {
+            margin-top: 50px;
+            margin-left: 36px;
+            height: 48px;
+            width: 82.5%;
+            font-size: 20px;
         }
 
 
@@ -77,11 +132,13 @@
         /* 33 */
     </style>
 </head>
+
 <body>
     <div class="navBar">
         <div>
             <div>
-                <a href="./index.html"><img width="150%" style="border-radius: 5px;" src="./logo.png/Opell1024_1.png" alt=""></a>
+                <a href="./index.html"><img width="150%" style="border-radius: 5px;" src="./logo.png/Opell1024_1.png"
+                        alt=""></a>
             </div>
             <div>
                 <a href="">Store</a>
@@ -113,29 +170,22 @@
             <button> <a href="adminProduct.html">Product Details</a></button>
             <button> <a href="adminAddProduct.html">Add new product</a></button>
         </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th id="idn">ID No.</th>
-                    <th id="name">First Name</th>
-                    <th id="name"> Last Name</th>
-                    <th id="emel">Email</th>
-                    <th id="pswd">Password</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody id="tbod">
-
-            </tbody>
-        </table>
+        <form id="addit">
+            <input type="text" placeholder="Enter name of product" id="name" required><br>
+            <input type="text" placeholder="Enter link of product image" id="image" required><br>
+            <input type="text" placeholder="Enter price" id="price" required><br>
+            <input type="text" placeholder="Enter EMI" id="emi" required><br>
+            <button id="addp">Add Product</button><br>
+        </form>
 
     </div>
 
     <div class="footer">
         <div>
             <div>
-                <p>To access and use all the features of Apple Card, you must add Apple Card to Wallet on an iPhone or iPad with the latest version of iOS or iPadOS. Update to the latest version by going to Settings > General > Software Update. Tap Download and Install.
+                <p>To access and use all the features of Apple Card, you must add Apple Card to Wallet on an iPhone or
+                    iPad with the latest version of iOS or iPadOS. Update to the latest version by going to Settings >
+                    General > Software Update. Tap Download and Install.
                     <br>
                     <br>
                     Available for qualifying applicants in the United States.
@@ -144,7 +194,8 @@
                     Apple Card is issued by Goldman Sachs Bank USA, Salt Lake City Branch.
                     <br>
                     <br>
-                    Learn more about how Apple Card applications are evaluated at support.apple.com/kb/HT209218.</p>
+                    Learn more about how Apple Card applications are evaluated at support.apple.com/kb/HT209218.
+                </p>
             </div>
             <div>
                 <div>
@@ -230,71 +281,96 @@
                     <p>Events</p>
                     <p>Contact Apple</p>
                 </div>
-                
+
             </div>
-            <p>More Ways to Shop:Find an Apple Store or Other Retailer  near You. Or call 1-8000-MY-APPLE </p>
+            <p>More Ways to Shop:Find an Apple Store or Other Retailer near You. Or call 1-8000-MY-APPLE </p>
         </div>
-     </div>
-
-
+    </div>
 </body>
+
 </html>
+
 <script>
-    let all=[]
-    let url="https://63c793e3e52516043f4040ed.mockapi.io/users";
-    fetch(url).then((res)=>res.json())
-     .then((data)=>{
-        // console.log(data)
-        data.forEach((elem,i)=>{
-            all.push(elem)
-        })
-        disaplyData(data)
-    }).catch((err)=>{
-        // alert("Error in API!")
-    })
+    var count = 15;
 
-    var idn;
-    function disaplyData(Data){
-        document.querySelector("tbody").innerHTML=""
-        Data.forEach((elem,i)=>{
-            let tr=document.createElement("tr");
-            let td1=document.createElement("td");
-            td1.innerText=elem.id;
-            let td2=document.createElement("td");
-            td2.innerText=elem.firstname;
-            let td3=document.createElement("td");
-            td3.innerText=elem.lastname;
-            let td4=document.createElement("td");
-            td4.innerText=elem.emailid;
-            let td5=document.createElement("td");
-            td5.innerText=elem.password;
-            let td6=document.createElement("td");
-            let btn=document.createElement("button");
-            btn.setAttribute("id","dbtn")
-            btn.innerText="Delete";
-            btn.addEventListener("click",(pe)=>{
-                pe.preventDefault()
-                idn=elem.id;
-                deleteItem()
-                alert("Delete user of Id no."+idn)
-            })
-            td6.append(btn)
-            tr.append(td1,td2,td3,td4,td5,td6);
-            document.querySelector("tbody").append(tr)
-        })
+    let add = document.getElementById("addp");
+    add.addEventListener("click", (rew) => {
+        rew.preventDefault();
 
-    }
+        let ShopiPhone = [];
+        let accessories = [];
+        let allmodel = []
 
-    function deleteItem(){
-        function deletes(){
-       fetch(`${url}/${idn}`,{
-        method: 'DELETE', 
-        headers:{
-            'Content-Type': 'application/json'
+        let Name = document.getElementById("name").value;
+        let Image = document.getElementById("image").value;
+        let Price = document.getElementById("price").value;
+        let Emi = document.getElementById("emi").value;
+        if (Name == "" || Image == "" || Price == "" || Emi == "") {
+            alert("Plaese fill all details!")
         }
+        count++;
+        let its = {
+            "id": count,
+            "top": "NEW",
+            "title": Name,
+            "price": Price,
+            "emi": Emi,
+            "image": `${Image}`,
+            "itemCount": 1
+        }
+        allmodel.push(its)
+        let url = "https://63c64ff64ebaa80285433dad.mockapi.io/apple";
+        fetch(url).then((res) => { return res.json() }).then((data) => {
+            // console.log(data)
+
+            data[0].ShopiPhone[0].Allmodels.forEach((elem, i) => {
+                allmodel.push(elem)
+            })
+            data[0].ShopiPhone[1].Accessories.forEach((elem, i) => {
+                accessories.push(elem)
+            })
+            
+
+            var obj = {
+                "Allmodels": allmodel
+            }
+            let obj1 = {
+                "Accessories": accessories
+            }
+            ShopiPhone.push(obj)
+            ShopiPhone.push(obj1)
+            console.log(obj1, obj)
+
+            fetch("https://63c64ff64ebaa80285433dad.mockapi.io/apple/1", {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+
+            fetch(`https://63c64ff64ebaa80285433dad.mockapi.io/apple`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "ShopiPhone": ShopiPhone
+                })
+            }).then((res) => {
+                return res.json()
+            }).then((data) => {
+                console.log(data)
+            }).catch((err) => {
+                alert(err)
+            })
+
+
+        }).catch((err) => {
+            alert("Error in API!")
+        })
+        // console.log(allmodel)
+        alert("Product added successfully!")
+
     })
-}
-deletes()
-location.reload()
-    }
+
 </script>

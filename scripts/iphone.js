@@ -49,13 +49,6 @@ sortPrice.addEventListener("change",()=>{
 })
 
 
-
-
-
-
-
-
-
 // RENDER FUNCTION
 function renderCards(data){
     iPhoneModels.innerHTML=""
