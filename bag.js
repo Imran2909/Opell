@@ -1,10 +1,18 @@
-const Url="https://63c793e3e52516043f4040ed.mockapi.io/users/29";
+var id=JSON.parse(localStorage.getItem("id"));
+
+const Url=`https://63c793e3e52516043f4040ed.mockapi.io/users/${id}`;
 
 var cartContainer=document.getElementById("cartContainer");
 var checkDiv=document.getElementById("checkDiv");
 var remove=document.getElementById("remove");
 var price=document.getElementById("price");
 var emi=document.getElementById("emi");
+
+var checkout=document.getElementById("checkout");
+
+checkout.addEventListener("click",()=>{
+    location.href="address.html";
+});
 
 var cartData=[];
 var userData={};
@@ -277,8 +285,14 @@ function display(cart){
             </div>
         </div>
         <div id="lastcheckoutButton">
-            <button>Continue to Shipping Address</button>
+            <button id="addressButton">Continue to Shipping Address</button>
         </div>`;
+
+        var addressButton=document.getElementById("addressButton");
+
+        addressButton.addEventListener("click",()=>{
+            location.href="address.html";
+        });
 
         price.innerText=totalcartprice;
         emi.innerText=totalemiprice;

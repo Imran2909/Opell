@@ -1,3 +1,6 @@
+* {
+    margin: 1px;
+}
 
 .navBar {
     background-color: rgb(8, 7, 7);
@@ -10,7 +13,7 @@
     top: 0;
 }
 
-.navBar>div{
+.navBar>div {
     width: 95%;
     margin: auto;
     display: flex;
@@ -21,9 +24,10 @@
 
 
 .navBar>div>div:nth-child(1) {
-    width:5%;
-    padding-left:10px;
+    width: 5%;
+    padding-left: 10px;
 }
+
 .navBar>div>div:nth-child(2) {
     width: 100%;
     display: flex;
@@ -35,48 +39,98 @@
     display: flex;
     justify-content: space-evenly;
 }
+
 a {
     text-decoration: none;
     font-size: 20px;
     color: rgb(201, 201, 201);
 }
+
 a:hover {
     cursor: pointer;
     color: rgb(250, 250, 248);
 }
-.contanier{
+
+.contanier {
     width: 100%;
     height: auto;
-    border-bottom: 2px solid black;
+    background-color: white;
 }
-.footer{
+
+.macBook {
+    background-color: black;
     width: 100%;
+    display: block;
+}
+
+.macBook>div {
+    width: 80%;
+    margin: auto;
+    color: white;
+    text-align: center;
+    height: auto;
+    /* margin-top: 30px; */
+}
+
+.macMini {
+    margin-top: 10px;
+    background-color: black;
+    width: 100%;
+    display: block;
+}
+
+.macMini>div {
+
+    width: 80%;
+    margin: auto;
+    color: white;
+    text-align: center;
+    height: auto;
+    padding-top: 30px;
+}
+.homePod{
+    margin-top: 10px;
+    background-color: black;
+    width: 100%;
+    display: block;
+}
+.homePod>div {
+
+    width: 80%;
+    margin: auto;
+    color: white;
+    text-align: center;
+    height: auto;
+    padding-top: 30px;
+}
+.footer {
+    border-bottom: 2px solid black;
+    width: 100%;
+    margin-top: 10px;
     background-color: rgb(243, 243, 243);
 }
-.footer>div{
+
+.footer>div {
     width: 93%;
     margin: auto;
     display: block;
     padding-bottom: 10px;
 
 }
-.footer>div>div:nth-child(1){
+
+.footer>div>div:nth-child(1) {
     width: 100%;
     padding: 10px;
     border-bottom: 1px solid rgb(52, 51, 51);
 }
-.footer>div>div:nth-child(2){
+
+.footer>div>div:nth-child(2) {
     width: 100%;
     margin-top: 10px;
     display: grid;
     text-align: center;
     gap: 10px;
-    grid-template-columns: repeat(5,1fr);
-    border-bottom: 1px solid rgb(52, 51, 51) ;
-    
+    grid-template-columns: repeat(5, 1fr);
+    border-bottom: 1px solid rgb(52, 51, 51);
+
 }
-
-
-
-
-
