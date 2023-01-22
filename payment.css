@@ -46,6 +46,7 @@ a:hover {
 }
 *{
     font-family: Arial, Helvetica;
+    margin: 1px
 }
 #container{
     width: 70%;
