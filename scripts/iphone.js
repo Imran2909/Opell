@@ -28,9 +28,9 @@ window.addEventListener("load", () => {
         .then((result) => {
             console.log(result[0]);
             modeldata = result[0].ShopiPhone[0].Allmodels;
-            accessoriesdata = result[0].ShopiPhone[1].Accessories;
+            accessoriesdata = result[0].ShopiPhone[0].Accessories;
             let modelsData = (result[0].ShopiPhone[0].Allmodels);
-            let accessoriesData = (result[0].ShopiPhone[1].Accessories);
+            let accessoriesData = (result[0].ShopiPhone[0].Accessories);
             showData(iPhoneModels, modelsData)
             showData(iPhoneAccessories, accessoriesData)
             console.log(modelsData)
@@ -60,7 +60,7 @@ sortPrice.addEventListener("change", () => {
         })
             .then((result) => {
                 let fetched = (result[0].ShopiPhone[0].Allmodels);
-                let fetchedAcc = (result[0].ShopiPhone[1].Accessories);
+                let fetchedAcc = (result[0].ShopiPhone[0].Accessories);
                 console.log(fetched)
                 showData(iPhoneModels, fetched)
                 showData(iPhoneAccessories, fetchedAcc)
