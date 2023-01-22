@@ -1,12 +1,48 @@
+
 var Qlogo=document.getElementById("Qlogo");
 var closelogo=document.getElementById("closelogo");
 var qnaDiv=document.getElementById("qnaDiv");
 var payButton=document.getElementById("payButton");
 
+
 payButton.addEventListener("click",(e)=>{
     e.preventDefault();
     location.href="Payment.html";
 });
+
+var id=JSON.parse(localStorage.getItem("id"));
+
+const Url=`https://63c793e3e52516043f4040ed.mockapi.io/users/${id}`;
+
+var amount=document.getElementById("amount");
+
+fetch(Url)
+.then((res)=>res.json())
+.then((data)=>{
+    // var index=1;
+    data.cart.map((element,index)=>{
+        element.id=index+1;
+        element.totalPrice=element.price*element.itemCount;
+        element.totalEmiPrice=element.emi*element.itemCount;
+        return element;
+    });
+    display(data.cart);
+})
+
+function display(cart){
+
+    var totalcartprice=0;
+    // var totalemiprice=0;
+
+    if(cart.length!=0)
+    {
+        cart.forEach((element)=>{
+            totalcartprice+=element.totalPrice;
+            // totalemiprice+=element.totalEmiPrice;
+        });
+    }
+    amount.innerHTML=totalcartprice;
+}
 
 Qlogo.addEventListener("click",(e)=>{
     e.preventDefault();
@@ -173,3 +209,19 @@ closelogo.addEventListener("click",(e)=>{
 
     qnaDiv.innerHTML=null;
 });
+
+// fetch(Url)
+// .then((res)=>res.json())
+// .then((data)=>{
+//     // var index=1;
+//     data.cart.map((element,index)=>{
+//         element.id=index+1;
+//         element.totalPrice=element.price*element.itemCount;
+//         element.totalEmiPrice=element.emi*element.itemCount;
+//         return element;
+//     });
+//     userData=data;
+//     // console.log(data.cart);
+//     display(data.cart);
+//     cartData=data.cart;
+// })

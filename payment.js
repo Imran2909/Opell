@@ -19,7 +19,6 @@ document.querySelector("#cash").addEventListener("click",function(){
     contain.style.display="block"
 })
 
-
 function cap(){
     var alpha=["A","B","C","D","E","F","G","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
 "1","2","3","4","5","6","7","8","9","0","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","r","s","t","u","v","w","x","y","z"]
@@ -64,3 +63,37 @@ function closePopup(){
 document.querySelector("#save-button").addEventListener("click",function(){
     window.location.href="OTP.html"
 })
+
+var id=JSON.parse(localStorage.getItem("id"));
+
+const Url=`https://63c793e3e52516043f4040ed.mockapi.io/users/${id}`;
+
+var amount=document.getElementById("amount");
+
+fetch(Url)
+.then((res)=>res.json())
+.then((data)=>{
+    // var index=1;
+    data.cart.map((element,index)=>{
+        element.id=index+1;
+        element.totalPrice=element.price*element.itemCount;
+        element.totalEmiPrice=element.emi*element.itemCount;
+        return element;
+    });
+    display(data.cart);
+})
+
+function display(cart){
+
+    var totalcartprice=0;
+    // var totalemiprice=0;
+
+    if(cart.length!=0)
+    {
+        cart.forEach((element)=>{
+            totalcartprice+=element.totalPrice;
+            // totalemiprice+=element.totalEmiPrice;
+        });
+    }
+    amount.innerHTML=totalcartprice;
+}
