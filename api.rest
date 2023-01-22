@@ -2,7 +2,7 @@
 GET  https://63c64ff64ebaa80285433dad.mockapi.io/apple
 
 ###
-DELETE  https://63c64ff64ebaa80285433dad.mockapi.io/apple/1
+DELETE  https://63c64ff64ebaa80285433dad.mockapi.io/apple/2
 
 ###
 POST https://63c64ff64ebaa80285433dad.mockapi.io/apple

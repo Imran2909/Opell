@@ -77,12 +77,11 @@ pe.preventDefault();
                 // console.log(elem.id);
                 val=elem.id;
                 localStorage.setItem("id",JSON.stringify(val));
-                count++
+                localStorage.setItem("mel",Mail);
+                count++;
             }
         })
-        if(count===0){
-            alert("Incorrect credentials!")
-        }
+        
     } 
     fetch("https://63c793e3e52516043f4040ed.mockapi.io/users")
 .then((res)=>res.json())
