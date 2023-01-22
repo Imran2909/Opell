@@ -2,6 +2,9 @@
     font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 /* Navbar */
+*{
+    margin: 1px;
+}
 .navBar {
     background-color: rgb(8, 7, 7);
     width: 100%;
@@ -93,7 +96,7 @@
     margin-bottom: 50px;
 } */
 #latest-cards{
-    margin-left: 20%;
+    /* margin-left: 20%; */
     display: grid;
     grid-auto-flow: column;
     scroll-behavior: smooth;
@@ -154,6 +157,7 @@
     margin-bottom: 60px;
     justify-content: space-around;
     align-items: center;
+    gap: 20px;
 }
 #help-card-1{
     border-radius: 20px;

@@ -76,6 +76,7 @@ pe.preventDefault();
             if(elem.emailid==Mail && elem.password==Pass){
                 // console.log(elem.id);
                 val=elem.id;
+                localStorage.setItem("id",JSON.stringify(val));
                 count++
             }
         })
@@ -90,7 +91,7 @@ pe.preventDefault();
     getId(data)
 })
 setTimeout(()=>{
-    alert("Sign Up successful!")
+    alert("Sign In successful!")
 console.log(val)
 window.location.assign("index.html")
 },2000)

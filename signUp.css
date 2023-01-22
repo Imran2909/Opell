@@ -1,5 +1,6 @@
 *{
     margin: 1px;
+    font-family: Arial, Helvetica;
 }
 .navBar {
     background-color: rgb(8, 7, 7);
@@ -60,7 +61,7 @@ a:hover {
 
 .contanier>div {
     width: 100%;
-    height: 680px;
+    height: auto;
 }
 
 .contanier>div:nth-child(2) {
@@ -78,7 +79,7 @@ a:hover {
 
 .contanier>div:nth-child(1) {
     padding: 30px;
-    margin-top: 150px;
+    margin-top:230px;
     border-right: 1px solid gray;
 }
 
@@ -155,12 +156,11 @@ button:hover {
     width: 100%;
     margin-top: 10px;
     display: grid;
+    grid-template-columns: repeat(5, 1fr);
     text-align: center;
     gap: 10px;
-    grid-template-columns: repeat(5, 1fr);
     border-bottom: 1px solid rgb(52, 51, 51);
 }
-
 #already {
     color: black;
     margin-left: 20px;
@@ -174,4 +174,31 @@ button:hover {
 #amn{
     height: 380px;
     margin-top: 140px;
+}
+@media all and (min-width:450px) and (max-width:999px){
+ 
+    .navBar>div>div:nth-child(2){
+        display: none;
+    }
+    .contanier{
+    flex-direction: column;
+
+    }
+    .contanier>div:nth-child(2){
+        width: 70%;
+    }
+    .contanier>div:nth-child(1) {
+        width: 80%;
+        margin-top:20px;
+        border: 0px solid white;
+    }
+    .footer>div>div:nth-child(2) {
+       display: grid;
+       grid-template-columns: repeat(1,1fr);
+    }
+    .contanier>div:nth-child(1) img{
+        width: 100%;
+        padding-left: 60px;
+    }
+   
 }

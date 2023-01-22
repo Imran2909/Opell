@@ -1,10 +1,18 @@
-const Url="https://63c793e3e52516043f4040ed.mockapi.io/users/29";
+var id=JSON.parse(localStorage.getItem("id"));
+
+const Url=`https://63c793e3e52516043f4040ed.mockapi.io/users/${id}`;
 
 var cartContainer=document.getElementById("cartContainer");
 var checkDiv=document.getElementById("checkDiv");
 var remove=document.getElementById("remove");
 var price=document.getElementById("price");
 var emi=document.getElementById("emi");
+
+var checkout=document.getElementById("checkout");
+
+checkout.addEventListener("click",()=>{
+    location.href="address.html";
+});
 
 var cartData=[];
 var userData={};
@@ -277,8 +285,14 @@ function display(cart){
             </div>
         </div>
         <div id="lastcheckoutButton">
-            <button>Continue to Shipping Address</button>
+            <button id="addressButton">Continue to Shipping Address</button>
         </div>`;
+
+        var addressButton=document.getElementById("addressButton");
+
+        addressButton.addEventListener("click",()=>{
+            location.href="address.html";
+        });
 
         price.innerText=totalcartprice;
         emi.innerText=totalemiprice;
@@ -291,10 +305,18 @@ function display(cart){
             <h1 id="checkDivEmptyProductH1">Your bag is empty.</h1>
             <p id="checkDivEmptyProductP">Sign in to see if you have any saved items. Or continue shopping.</p>
             <div id="checkDivEmptyProductButtons">
-                <button>Sign In</button>
-                <button>Continue Shopping</button>
+                <button id="signin">Sign In</button>
+                <button id="shop">Continue Shopping</button>
             </div>
     `;
+        var signin=document.getElementById("signin");
+        var shop=document.getElementById("shop");
+        signin.addEventListener("click",()=>{
+            location.href="signUp.html";
+        });
+        shop.addEventListener("click",()=>{
+            location.href="iphone.html";
+        });
     }
 }
 
