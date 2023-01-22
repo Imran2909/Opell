@@ -1,50 +1,67 @@
-let iPhoneModels=document.getElementById("iphone-models");
+let iPhoneModels = document.getElementById("iphone-models");
+let iPhoneAccessories = document.getElementById("iphone-accessories");
+let inputValue = document.getElementById("iphone-search-bar");
+let id = JSON.parse(localStorage.getItem("id"));
+let modeldata = [];
+let accessoriesdata = [];
 
-// FETCH FOR DEFAULT
-fetch("https://63c64ff64ebaa80285433dad.mockapi.io/apple").then((res)=>{
-    return res.json()
+inputValue.addEventListener("input", () => {
+    let value = modeldata.filter((item) => {
+        return item.title.toLowerCase().includes(inputValue.value.toLowerCase())
+    })
+    let valueacc = accessoriesdata.filter((item) => {
+        return item.title.toLowerCase().includes(inputValue.value.toLowerCase())
+    })
+    showData(iPhoneModels, value)
+    showData(iPhoneAccessories, valueacc)
 })
-.then((result)=>{
-    let modelsData=(result[0].ShopiPhone[0].Allmodels);
-    // console.log(modelsData)
-    renderCards(modelsData)
+
+
+
+window.addEventListener("load", () => {
+    // FETCH FOR DEFAULT
+    fetch("https://63c64ff64ebaa80285433dad.mockapi.io/apple").then((res) => {
+        return res.json()
+    })
+        .then((result) => {
+            modeldata = result[0].ShopiPhone[0].Allmodels;
+            accessoriesdata = result[0].ShopiPhone[1].Accessories;
+            let modelsData = (result[0].ShopiPhone[0].Allmodels);
+            let accessoriesData = (result[0].ShopiPhone[1].Accessories);
+            showData(iPhoneModels, modelsData)
+            showData(iPhoneAccessories, accessoriesData)
+            console.log(modelsData)
+        })
 })
+
 
 // SORT BY PRICE
-let sortPrice=document.getElementById("price-sort");
-sortPrice.addEventListener("change",()=>{
-    value=sortPrice.value;
+let sortPrice = document.getElementById("price-sort");
+sortPrice.addEventListener("change", () => {
+    value = sortPrice.value;
     console.log(value)
-    if(value=="l2h"){
-        let filtered=fetch("https://63c64ff64ebaa80285433dad.mockapi.io/apple");
-        filtered.then((res)=>{
+    if (value == "l2h") {
+        let fetched = modeldata.sort((a, b) => a.price - b.price);
+        let fetchedAcc = accessoriesdata.sort((a, b) => a.price - b.price);
+        showData(iPhoneModels, fetched)
+        showData(iPhoneAccessories, fetchedAcc)
+    } else if (value == "h2l") {
+        let fetched = modeldata.sort((a, b) => b.price - a.price);
+        let fetchedAcc = accessoriesdata.sort((a, b) => b.price - a.price);
+        showData(iPhoneModels, fetched)
+        showData(iPhoneAccessories, fetchedAcc)
+    } else {
+        let filtered = fetch("https://63c64ff64ebaa80285433dad.mockapi.io/apple");
+        filtered.then((res) => {
             return res.json()
         })
-        .then((result)=>{
-            let fetched=(result[0].ShopiPhone[0].Allmodels.sort((a,b)=>a.price - b.price));
-            console.log(fetched)
-            renderCards(fetched)
-        })
-    } else if(value=="h2l"){
-        let filtered=fetch("https://63c64ff64ebaa80285433dad.mockapi.io/apple");
-        filtered.then((res)=>{
-            return res.json()
-        })
-        .then((result)=>{
-            let fetched=(result[0].ShopiPhone[0].Allmodels.sort((a,b)=>b.price - a.price));
-            console.log(fetched)
-            renderCards(fetched)
-        })
-    } else{
-        let filtered=fetch("https://63c64ff64ebaa80285433dad.mockapi.io/apple");
-        filtered.then((res)=>{
-            return res.json()
-        })
-        .then((result)=>{
-            let fetched=(result[0].ShopiPhone[0].Allmodels);
-            console.log(fetched)
-            renderCards(fetched)
-        })
+            .then((result) => {
+                let fetched = (result[0].ShopiPhone[0].Allmodels);
+                let fetchedAcc = (result[0].ShopiPhone[1].Accessories);
+                console.log(fetched)
+                showData(iPhoneModels, fetched)
+                showData(iPhoneAccessories, fetchedAcc)
+            })
     }
 })
 
@@ -55,25 +72,58 @@ sortPrice.addEventListener("change",()=>{
 
 
 
-
-// RENDER FUNCTION
-function renderCards(data){
-    iPhoneModels.innerHTML=""
-    let cardlist=`
-    ${data.map(item => getCard(item.title,item.image,item.price)).join("")}
-    `
-    iPhoneModels.innerHTML=cardlist
+function showData(div, data) {
+    div.innerHTML = ""
+    data.forEach((element, index) => {
+        let card = document.createElement("div");
+        card.setAttribute("class", "iphone-card");
+        let title = document.createElement("h3");
+        title.innerText = element.title;
+        let img = document.createElement("img");
+        img.setAttribute("src", element.image);
+        let innerDiv = document.createElement("div");
+        let price = document.createElement("p");
+        price.innerText = "Rs." + " " + element.price;
+        let button = document.createElement("button");
+        button.innerText = "Add to Cart";
+        button.addEventListener("click", () => {
+            let cartArray = JSON.parse(localStorage.getItem("cart")) || [];
+            let isAlreadyinCart = false;
+            for (let i = 0; i < cartArray.length; i++) {
+                if (cartArray[i].id === element.id) {
+                    isAlreadyinCart = true;
+                    break;
+                }
+            }
+            if (isAlreadyinCart==true) {
+                alert("Product Already in Cart");
+            } else {
+                cartArray.push(element);
+                localStorage.setItem("cart", JSON.stringify(cartArray));
+                alert("Added To Cart");
+                const url = `https://63c64ff64ebaa80285433dad.mockapi.io/users/${id}`;
+                fetch(url).then((res) => {
+                    return res.json()
+                }).then((result) => {
+                    result.cart = cartArray;
+                    update(result)
+                })
+            }
+            console.log(cartArray)
+        })
+        innerDiv.append(price, button);
+        card.append(title, img, innerDiv)
+        div.append(card)
+    })
 }
 
-// CARD FUNCTION
-function getCard(title,image,price){
-    let card=`<div class="iphone-card"><h3>${title}</h3>
-    <img src=${image} alt="">
-    <div>
-        <p>Rs. ${price}</p>
-        <button>Add to Cart</button>
-    </div>
-    </div>`
-
-    return card
+async function update(cartdata) {
+    let res = await fetch((url), {
+        method: 'PUT',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(cartdata)
+    })
+    let d = await res.json();
 }
