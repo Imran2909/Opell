@@ -91,7 +91,7 @@ pe.preventDefault();
     getId(data)
 })
 setTimeout(()=>{
-    alert("Sign Up successful!")
+    alert("Sign In successful!")
 console.log(val)
 window.location.assign("index.html")
 },2000)
