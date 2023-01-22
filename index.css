@@ -103,6 +103,68 @@ a:hover {
     height: auto;
     padding-top: 30px;
 }
+.multipleProducts{
+   height: auto;
+   padding-top: 10px;
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   grid-gap:10px;
+}
+.multipleProducts>div{
+ 
+ height: auto;
+}
+.multipleProducts>div:nth-child(1){
+ width: 100%;
+ margin: auto;
+ color: white;
+ background-color: black;
+ text-align: center;
+ padding-top: 30px;
+}
+.multipleProducts>div:nth-child(2){
+    width: 100%;
+    margin: auto;
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding-top: 10px;
+   }
+   .multipleProducts>div:nth-child(4){
+    width: 100%;
+    margin: auto;
+    color: black;
+    background-color: white;
+    text-align: center;
+    padding-top: 30px;
+   }
+   .multipleProducts>div:nth-child(3){
+    width: 100%;
+    margin: auto;
+    color: white;
+    background-color: black;
+    text-align: center;
+    height: auto;
+    padding-top: 30px;
+   }
+   .multipleProducts>div:nth-child(5){
+    width: 100%;
+    margin: auto;
+    color: white;
+    background-color: #b12;
+    text-align: center;
+    height: auto;
+    padding-top: 30px;
+   }
+   .multipleProducts>div:nth-child(6){
+    width: 100%;
+    margin: auto;
+    color: black;
+    background-color: white;;
+    text-align: center;
+    height: auto;
+    padding-top: 30px;
+   }
 .footer {
     border-bottom: 2px solid black;
     width: 100%;
@@ -132,5 +194,39 @@ a:hover {
     gap: 10px;
     grid-template-columns: repeat(5, 1fr);
     border-bottom: 1px solid rgb(52, 51, 51);
+
+}
+.carousel {
+    background: white;
+  }
+.carousel-cell {
+    width: 50%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  .carousel-cell img{
+    width: 100%;
+  }
+ /* cell number */
+.carousel-cell:before {
+    display: block;
+  }
+@media all and (min-width:450px) and (max-width:999px){
+    #storedisplay{
+        display: flex;
+    } 
+.footer>div>div:nth-child(2) {
+ display: grid;
+ grid-template-columns: repeat(2,1fr);
+}
+.multipleProducts{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
+.navBar>div>div:nth-child(2){
+    display: none;
+}
 
 }
