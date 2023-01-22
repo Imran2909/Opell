@@ -1,6 +1,6 @@
 let codes=document.querySelectorAll(".code")
 
-    codes[0].focus()
+    codes[0].focus();
     codes.forEach((code,idx)=>{
    code.addEventListener("keydown",(e)=>{
     if(e.key>=0 &&e.key<=9){
@@ -25,4 +25,4 @@ function openPopup(){
 function closePopup(){
     popup.classList.remove("open-popup")
     window.location.href="index.html"
-}
+};

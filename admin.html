@@ -110,7 +110,7 @@
     <div class="main">
         <div>
             <button> <a href="admin.html">User Details</a></button>
-            <button> <a href="admin.html">Product Details</a></button>
+            <button> <a href="adminProduct.html">Product Details</a></button>
             <button> <a href="admin.html">Add new product</a></button>
         </div>
 
@@ -242,8 +242,9 @@
 <script>
     let all=[]
     let url="https://63c793e3e52516043f4040ed.mockapi.io/users";
-    fetch(url).then((res)=>res.json()).then((data)=>{
-        console.log(data)
+    fetch(url).then((res)=>res.json())
+     .then((data)=>{
+        // console.log(data)
         data.forEach((elem,i)=>{
             all.push(elem)
         })
@@ -271,9 +272,11 @@
             let btn=document.createElement("button");
             btn.setAttribute("id","dbtn")
             btn.innerText="Delete";
-            btn.addEventListener("click",()=>{
+            btn.addEventListener("click",(pe)=>{
+                pe.preventDefault()
                 idn=elem.id;
                 deleteItem()
+                alert("Delete user of Id no."+idn)
             })
             td6.append(btn)
             tr.append(td1,td2,td3,td4,td5,td6);
@@ -282,10 +285,9 @@
 
     }
 
-
     function deleteItem(){
         function deletes(){
-       fetch(`${url}/${idn}` ,{
+       fetch(`${url}/${idn}`,{
         method: 'DELETE', 
         headers:{
             'Content-Type': 'application/json'
@@ -293,8 +295,6 @@
     })
 }
 deletes()
-window.location.assign("admin.html")
+location.reload()
     }
-
-
 </script>

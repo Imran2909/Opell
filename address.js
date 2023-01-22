@@ -1,6 +1,12 @@
 var Qlogo=document.getElementById("Qlogo");
 var closelogo=document.getElementById("closelogo");
 var qnaDiv=document.getElementById("qnaDiv");
+var payButton=document.getElementById("payButton");
+
+payButton.addEventListener("click",(e)=>{
+    e.preventDefault();
+    location.href="Payment.html";
+});
 
 Qlogo.addEventListener("click",(e)=>{
     e.preventDefault();
@@ -26,7 +32,7 @@ Qlogo.addEventListener("click",(e)=>{
 
     <hr id="qnahr">
     <div id="qline">
-        <p>What are my payment options?</p>
+        <p>How much does delivery cost?</p>
         <img id="downIcon3" src="logo.png/down.png" alt="icon">
         <img id="upIcon3" src="logo.png/up.png" alt="icon">
     </div>
@@ -34,7 +40,7 @@ Qlogo.addEventListener("click",(e)=>{
 
     <hr id="qnahr">
     <div id="qline">
-        <p>What are my financing options?</p>
+        <p>Can you deliver to somewhere other than my home?</p>
         <img id="downIcon4" src="logo.png/down.png" alt="icon">
         <img id="upIcon4" src="logo.png/up.png" alt="icon">
     </div>
@@ -42,7 +48,7 @@ Qlogo.addEventListener("click",(e)=>{
 
     <hr id="qnahr">
     <div id="qline">
-        <p>Does Apple offer an education discount?</p>
+        <p>Why is my PIN code unavailable for delivery?</p>
         <img id="downIcon5" src="logo.png/down.png" alt="icon">
         <img id="upIcon5" src="logo.png/up.png" alt="icon">
     </div>
@@ -50,7 +56,7 @@ Qlogo.addEventListener("click",(e)=>{
 
     <hr id="qnahr">
     <div id="qline">
-        <p>Can I shop for Family & Friends in other countries or regions?</p>
+        <p>How do I track my delivery?</p>
         <img id="downIcon6" src="logo.png/down.png" alt="icon">
         <img id="upIcon6" src="logo.png/up.png" alt="icon">
     </div>
@@ -97,7 +103,7 @@ Qlogo.addEventListener("click",(e)=>{
 
     downIcon3.addEventListener("click",()=>{
         downIcon3.style.display="none";
-        ans3.innerText="We accept most credit and debit cards, as well as credit card and debit EMI. We also accept Net Banking, UPI and Payment on Delivery. Some payment options may not be available for all products. You can call 000800 040 1966 for more information.";
+        ans3.innerText="Express Delivery is free for most online orders. You can upgrade your delivery method for an additional charge.";
         upIcon3.style.display="block";
     });
 
@@ -114,7 +120,7 @@ Qlogo.addEventListener("click",(e)=>{
 
     downIcon4.addEventListener("click",()=>{
         downIcon4.style.display="none";
-        ans4.innerText="You can pay in instalments* using any credit card or debit account with EMI. During Checkout, you can compare and select instalment options. *Subject to card eligibility. See terms.";
+        ans4.innerText="Yes. You can enter the address of your choice when prompted at checkout.";
         upIcon4.style.display="block";
     });
 
@@ -131,7 +137,7 @@ Qlogo.addEventListener("click",(e)=>{
 
     downIcon5.addEventListener("click",()=>{
         downIcon5.style.display="none";
-        ans5.innerText="Yes. Apple offers special pricing for students, teachers, administrators and staff members. If you think you qualify, visit the Apple Education Store(opens in a new window) to place your order.";
+        ans5.innerText="We are currently unable to deliver to certain PIN codes in India. For some PIN codes this is temporary due to local COVID-19 restrictions.";
         upIcon5.style.display="block";
     });
 
@@ -148,7 +154,7 @@ Qlogo.addEventListener("click",(e)=>{
 
     downIcon6.addEventListener("click",()=>{
         downIcon6.style.display="none";
-        ans6.innerText="Visit the online store of the country or region where the products will be delivered to place your order. You can call 000800 040 1966 for more information.";
+        ans6.innerText="As each item is dispatched, we’ll send you a notification. Visit your online Order Status(opens in a new window) to view the up-to-date status of your order.";
         upIcon6.style.display="block";
     });
 
