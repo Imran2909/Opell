@@ -2,11 +2,148 @@
 GET  https://63c64ff64ebaa80285433dad.mockapi.io/apple
 
 ###
-DELETE https://63c793e3e52516043f4040ed.mockapi.io/users/3
-        
+DELETE  https://63c64ff64ebaa80285433dad.mockapi.io/apple/1
+
+###
+POST https://63c64ff64ebaa80285433dad.mockapi.io/apple
+Content-Type: application/json
+
+{
+    "ShopiPhone": [
+      {
+        "Allmodels": [
+          {
+            "id": 1,
+            "top": "NEW",
+            "title": "iPhone 14 Pro & iPhone 14 Pro Max",
+            "price": 129900,
+            "emi": 15413,
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-card-40-iphone14pro-202209?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1663611329492",
+            "itemCount": 1
+          },
+          {
+            "id": 2,
+            "top": "NEW",
+            "title": "iPhone 14 & iPhone 14 Plus",
+            "price": 79900,
+            "emi": 9480,
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-card-40-iphone14-202209?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1661958160674",
+            "itemCount": 1
+          },
+          {
+            "id": 3,
+            "top": "",
+            "title": "iPhone 13 mini & iPhone 13",
+            "price": 64900,
+            "emi": 7700,
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-card-40-iphone13-202209?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1661958176452",
+            "itemCount": 1
+          },
+          {
+            "id": 4,
+            "top": "",
+            "title": "iPhone SE",
+            "price": 49900,
+            "emi": 5921,
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-card-40-iphonese-202203?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1646415838921",
+            "itemCount": 1
+          },
+          {
+            "id": 5,
+            "top": "",
+            "title": "iPhone 12",
+            "price": 59900,
+            "emi": 7107,
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-card-40-iphone12-202209?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1661958189616",
+            "itemCount": 1
+          },
+          {
+            "id": 6,
+            "top": "NEW",
+            "title": "iPhone 14 Pro Max",
+            "price": 129900,
+            "emi": 15413,
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-card-40-iphone14pro-202209?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1663611329492",
+            "itemCount": 1
+          },
+          {
+            "id": 7,
+            "top": "NEW",
+            "title": "iPhone 14 Plus",
+            "price": 79900,
+            "emi": 9480,
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-card-40-iphone14-202209?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1661958160674",
+            "itemCount": 1
+          }
+        ]
+      },
+      {
+        "Accessories": [
+          {
+            "id": 8,
+            "top": "New",
+            "title": "iPhone 14 Pro Max Leather Case with MagSafe - Ink",
+            "price": 5900,
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MPPP3?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1662503140974",
+            "itemCount": 1
+          },
+          {
+            "id": 9,
+            "top": "New",
+            "title": "iPhone Leather Wallet with MagSafe - Orange",
+            "price": 5900,
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MPPY3?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1661458144361",
+            "itemCount": 1
+          },
+          {
+            "id": 10,
+            "top": "New",
+            "title": "iPhone 14 Silicone Case with MagSafe - Lilac",
+            "price": 4900,
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MPRY3?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1666123999266",
+            "itemCount": 1
+          },
+          {
+            "id": 11,
+            "top": "",
+            "title": "MagSafe Charger",
+            "price": 4500,
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MHXH3?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1661269793559",
+            "itemCount": 1
+          },
+          {
+            "id": 12,
+            "top": "New",
+            "title": "iPhone 14 Plus Clear Case with MagSafe",
+            "price": 4900,
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MPU43?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1660944002882",
+            "itemCount": 1
+          },
+          {
+            "id": 13,
+            "top": "New",
+            "title": "iPhone 14 Plus Silicon Case with MagSafe - Succulent",
+            "price": 4900,
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MPTC3?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1666125284698",
+            "itemCount": 1
+          },
+          {
+            "id": 14,
+            "top": "New",
+            "title": "iPhone 14 Pro Max Leather Case with MagSafe - Ink",
+            "price": 5900,
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MPPP3?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1662503140974",
+            "itemCount": 1
+          }
+        ]
+      }
+    ]
+}
          
     
 ###
 
     # [{"id":"1","firstname":"Tusar","lastname":"Mondal","emailid":"tusharmondal@gmail.com","password":"p@ssw0rd","cart":[{"id":1,"top":"NEW","title":"iPhone 14 Pro & iPhone 14 Pro Max","price":129900,"emi":15413,"image":"https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-card-40-iphone14pro-202209?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1663611329492","itemCount":1},{"id":2,"top":"NEW","title":"iPhone 14 & iPhone 14 Plus","price":79900,"emi":9480,"image":"https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-card-40-iphone14-202209?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1661958160674","itemCount":1},{"id":3,"top":"","title":"iPhone 13 mini & iPhone 13","price":64900,"emi":7700,"image":"https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-card-40-iphone13-202209?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1661958176452","itemCount":1}]},{"id":"2","firstname":"Akash","lastname":"Mishra","emailid":"akashmishra@gmail.com","password":"@k@shm1shr@","cart":[]}]
     
+
+    #  
