@@ -53,6 +53,32 @@ function openPopup(){
     body.style.opacity="0.5"
     popup.classList.add("open-popup")
   
+
+    var id=JSON.parse(localStorage.getItem("id"));
+
+const Url=`https://63c793e3e52516043f4040ed.mockapi.io/users/${id}`;
+
+
+fetch(Url)
+.then((res)=>res.json())
+.then((data)=>{
+
+    data.cart=[];
+    update(data)
+})
+
+async function update(userdata){
+    let res=await fetch(Url,{
+        method: 'PUT',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userdata)
+    })
+
+    let d=await res.json();
+}
+
     
 }
 
